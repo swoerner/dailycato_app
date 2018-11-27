@@ -11,16 +11,15 @@ class RestaurantsController < ApplicationController
     # end
   end
 
-
   def show
-    # @restaurant = Restaurant.where(id: params[:id])
-    # @markers = @restaurant.map do |restaurant|
-    #   {
-    #     lng: restaurant.longitude,
-    #     lat: restaurant.latitude,
-    #     infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
-    #   }
-    # end
+    @restaurant = Restaurant.where(id: params[:id])
+    @markers = @restaurant.map do |restaurant|
+      {
+        lng: restaurant.longitude,
+        lat: restaurant.latitude,
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+      }
+    end
     @restaurant = Restaurant.find(params[:id])
   end
 
