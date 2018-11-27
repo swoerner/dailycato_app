@@ -6,13 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
+User.destroy_all
 tim = User.create!(email: "tim.raue@web.de", first_name: "Tim", last_name: "Raue", password: "123123")
 
-Restaurant.delete_all
-
-restaurants = Restaurant.create!(name: 'Tim Raue', location: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
-restaurants = Restaurant.create!(name: 'Dylan', location: "Spreeufer 3, 10969 Berlin",  cuisine: "frensh", user: tim)
+Restaurant.destroy_all
 
 # restaurant1 = Restaurant.new(name: 'Tim Raue', address: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
 # restaurant1.remote_photo_url = 'https://res.cloudinary.com/duh9oaa44/image/upload/v1542981947/timraue.jpg'
@@ -28,6 +25,6 @@ restaurants = Restaurant.create!(name: 'Ristorante Sale e Tabacchi', location: "
 restaurants = Restaurant.create!(name: 'Otito', location: "Leipziger Str. 30, 10117 Berlin",  cuisine: "vietnamese", user: tim, remote_photo_url: 'https://res.cloudinary.com/duh9oaa44/image/upload/v1542981944/otito.jpg')
 restaurants = Restaurant.create!(name: 'Kirsons Charlotte', location: "Charlottenstr. 13, 10969",  cuisine: "eastern european", user: tim, remote_photo_url: 'https://res.cloudinary.com/duh9oaa44/image/upload/v1542981944/kirsonscharlotte.jpg')
 restaurants = Restaurant.create!(name: 'Chupenga', location: "Charlottenstr. 4, 10969 Berlin",  cuisine: "burrito", user: tim, remote_photo_url: 'https://res.cloudinary.com/duh9oaa44/image/upload/v1542981944/chupenga.jpg')
-restaurants = Restaurant.create!(name: 'Tim Raue', address: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
-restaurants = Restaurant.create!(name: 'Dylan', address: "Spreeufer 3, 10969 Berlin",  cuisine: "frensh", user: tim)
+restaurants = Restaurant.create!(name: 'Tim Raue', location: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
+restaurants = Restaurant.create!(name: 'Dylan', location: "Spreeufer 3, 10969 Berlin",  cuisine: "frensh", user: tim)
 
