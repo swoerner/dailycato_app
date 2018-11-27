@@ -1,2 +1,10 @@
-<h1>Restaurants#edit</h1>
-<p>Find me in app/views/restaurants/edit.html.erb</p>
+<h1>Edit restaurant</h1>
+
+<%= simple_form_for(@restaurant) do |f| %>
+<%= f.input :name %>
+<%= f.input :cuisine, :collection => ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "vietnamese", "eastern european", "burrito"] %>
+<%= f.input :address %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', restaurants_path %>

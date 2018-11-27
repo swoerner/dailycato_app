@@ -1,2 +1,62 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+  <div class="flex-box">
+
+    <div class="flex-left">
+      <div class="details-restaurant">
+        <h1><%= @restaurant.name %></h1>
+        <h2><%= @restaurant.address %></h2>
+        <div class="booking-field">
+          <%= simple_form_for [@restaurant, Booking.new] do |b| %>
+            <%= b.input :booking_time, as: :string, input_html: {class: "datepicker"} %>
+            <%# = b.button :submit, "Book", class: "btn btn-primary" %>
+            <%= b.button :submit, "Reserve my Table", class: "booking-button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-right">
+      <div class="flex-container-all-boxes">
+        <div class="flex-container map">
+          <div class="map-wrapper">
+
+            <div
+            id="map"
+            style="width: 100%;
+            height: 100%;"
+
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex-container">
+         <h2 class="box-title">Contact Details</h2>
+         <table class="contact-table">
+          <tr><th>Adress</th><td><%= @restaurant.address %></td></tr>
+          <tr><th>Telephone</th><td>030 25937930</td></tr>
+          <tr><th>Email</th><td>office@tim-raue.com</td></tr>
+          <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
+        </table>
+      </div>
+
+
+
+      <div class="flex-container">
+        <h2 class="box-title">Opening Hours</h2>
+        <table class="opening-table">
+          <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
+          <tr><th>Sunday</th><td>Closed</td></tr>
+        </table>
+      </div>
+
+      <div class="flex-container social-media">
+        <h2 class="box-title">Social Media</h2>
+      </div>
+    </div>
+  </div>
