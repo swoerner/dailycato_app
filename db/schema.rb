@@ -10,9 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_11_26_170506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "business_hours", force: :cascade do |t|
+    t.time "open_time"
+    t.time "closed_time"
+    t.string "day"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_business_hours_on_restaurant_id"
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "food_type"
+    t.string "type_of_deal"
+    t.integer "price"
+    t.time "start_date"
+    t.time "end_date"
+    t.string "recurring"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_deals_on_restaurant_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "cuisine"
+    t.time "deal_hours"
+    t.string "phone_number"
+    t.string "price_category"
+    t.string "location"
+    t.integer "coordinates"
+    t.string "website_url"
+    t.string "logo_url"
+    t.string "photos"
+    t.boolean "disabled"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.integer "review_user_id"
+    t.string "image_url"
+    t.string "review_description"
+    t.string "time_created"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "is_owner"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "business_hours", "restaurants"
+  add_foreign_key "deals", "restaurants"
+  add_foreign_key "restaurants", "users"
+  add_foreign_key "reviews", "restaurants"
 end
