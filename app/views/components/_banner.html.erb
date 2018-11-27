@@ -4,13 +4,13 @@
 
   <div class="banner-content">
     <h1 id="first-header">Hungry?</h1> <br>
-    <p id="second-header">Discover the best daily lunch deals nearby!</p>
+    <p id="second-header">Find the best lunch deals nearby. <strong> Now!</strong></p>
 
     <!-- Die Action Methode legt fest, was nach dem Druecken des Submit Buttons passieren soll. In diesem -->
     <!-- Fall soll auf eine neue Seite geleitet werden (restaurant path) -->
     <!-- das Formular bekommt eine Id, das das Plugin dieses aufruft. -->
     <!-- Damit auf der weitergeleiteten Seite die Werte in der URL stehen, braucht es eine name Klasse. -->
-    <form action="<%= restaurants_index_path %>" class="js-autocomplete-form">
+    <form action="<%= restaurants_path %>" class="js-autocomplete-form">
       <div class="form-group" >
         <input type="text" class="form-control inputfield" value="<%= params[:location] %>" name="location" id="restaurant_address" placeholder="e.g. Berlin">
         <input type="submit" class="form-control find-button" value="FIND DEALS">
@@ -18,7 +18,7 @@
     </form>
   </div>
 </div>
-</div>
+
 
 
 
