@@ -1,1 +1,88 @@
-// Specific CSS for your home-page
+.container-fluid {
+  margin-top: 50px;
+}
+
+.second-section {
+  width: 100%;
+  height: 40%
+}
+
+.advantage-cards h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+
+}
+
+body {
+ margin:0;
+ padding:0;
+ height:100%;
+}
+
+#wrapper-all {
+  height:100%;
+  width: 100%;
+  position:relative;
+}
+
+#banner-all {
+  height:100%;
+  width: 100%;
+  position:relative;
+}
+
+// #first-elements {
+//   margin-bottom: 500px;
+//   padding-bottom: 500px;
+// }
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  #first-header {
+    font-size: 45px;
+  }
+
+  #second-header {
+    font-size: 20px;
+  }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  #second-header {
+    font-size: 20px;
+  }
+
+  #first-header {
+    font-size: 45px;
+  }
+
+}
+
