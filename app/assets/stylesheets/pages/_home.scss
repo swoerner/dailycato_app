@@ -1,7 +1,16 @@
+.flex-container-advantages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
 .container-fluid {
   margin-top: 50px;
   background-color: #DEE1EE;
-  padding-bottom: 70px;
+  padding-bottom: 65px;
 }
 
 .second-section {
@@ -21,6 +30,11 @@
 
 .find-us {
   margin-top: 400px !important;
+}
+
+.spacing {
+  margin-top: 25px;
+
 }
 
 h1 {
