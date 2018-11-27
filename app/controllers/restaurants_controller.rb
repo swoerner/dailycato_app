@@ -3,11 +3,13 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
     # @restaurants_geo = Restaurant.near(params[:location], 3)
     # @markers = @restaurants_geo.map do |restaurant|
+
     # {
     #   lng: restaurant.longitude,
     #   lat: restaurant.latitude,
     #   infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
     # }
+    # end
   end
 
   def show
@@ -51,6 +53,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :location, :cuisine)
+    
+    params.require(:restaurant).permit(:name, :location, :cuisine, :photo)
   end
 end
