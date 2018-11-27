@@ -18,7 +18,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
+gem 'cloudinary', '1.10.1.pre.rc'
+gem 'carrierwave', '~> 1.2'
 gem "pundit"
 gem "geocoder"
 

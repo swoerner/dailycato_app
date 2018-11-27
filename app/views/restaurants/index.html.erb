@@ -1,2 +1,91 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<div class="index_flex">
+  <div class="offers-container">
+
+    <div class="index_flex">
+      <div class="offers-container">
+
+        <div class ="helper-bar">
+          <form class="form-inline offer-location-search" action="<%= restaurants_path %>">
+            <div class="form-group" >
+              <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_address" placeholder="e.g. Berlin">
+              <input type="submit" class="search-index-btn" value="⚲">
+            </div>
+          </form>
+        </div>
+
+
+        <div class="headline-search">
+          <h1>We have found <%= Restaurant.count %> deals around, for <span id="date"></span>:</h1>
+        </div>
+
+
+
+
+        <% @restaurants.each do |restaurant| %>
+
+        <div class="offer-detail"  onclick="location.href='<%= restaurant_path(restaurant) %>';">
+          <div class="offer-count marker-pin">
+
+            <p><%= restaurant.id %></p>
+
+          </div>
+
+         <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
+          <div class="restaurant-details">
+             <%= cl_image_tag restaurant.photo, height: 50, width: 50, crop: :fill, radius: "max" %>
+            <h3><%= restaurant.name %></h3>
+
+            <p><%= restaurant.cuisine.titleize %></p> -->
+          </div>
+          <div class="restaurant-offer">
+            <div class="offer-name">
+              <div class="flex-text">
+                <p><strong>Schnitzeltag </strong></p>
+                <p>Das kannst du dir nicht entgehen lassen</p>
+              </div>
+              <div class="offer-price">
+                <p>6.99€</p>
+              </div>
+            </div>
+            <div class="offer-name">
+              <div class="flex-text">
+                <p><strong>Soup of the day </strong></p>
+                <p>Enjoy our delicious soup</p>
+              </div>
+              <div class="offer-price">
+                <p>3.99€</p>
+              </div>
+            </div>
+            <div class="offer-name">
+              <div class="flex-text">
+                <p><strong>Spaghetti Carbonara</strong></p>
+                <p>Our world-famous noudles for you </p>
+              </div>
+              <div class="offer-price">
+                <p>4.99€</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-link">
+
+            <p>
+              <a href="<%= restaurant_path(restaurant) %>">
+                <i class="fas fa-angle-right icon"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div
+
+      id="map"
+
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+      ></div>
+
+
+    </div>
+  </div>
