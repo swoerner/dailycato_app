@@ -6,13 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
+User.destroy_all
 tim = User.create!(email: "tim.raue@web.de", first_name: "Tim", last_name: "Raue", password: "123123")
 
 Restaurant.delete_all
 
 Restaurant.create!(name: 'Tim Raue', location: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
 Restaurant.create!(name: 'Dylan', location: "Spreeufer 3, 10969 Berlin",  cuisine: "frensh", user: tim)
+=======
+Restaurant.destroy_all
+
 
 # restaurant1 = Restaurant.new(name: 'Tim Raue', address: "Rudi-Dutschke-Str. 26, 10969 Berlin",  cuisine: "modern european", user: tim)
 # restaurant1.remote_photo_url = 'https://res.cloudinary.com/duh9oaa44/image/upload/v1542981947/timraue.jpg'
