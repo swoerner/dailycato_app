@@ -7,7 +7,7 @@
         <div class ="helper-bar">
           <form class="form-inline offer-location-search" action="<%= restaurants_path %>">
             <div class="form-group" >
-              <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_address" placeholder="e.g. Berlin">
+              <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
               <input type="submit" class="search-index-btn" value="⚲">
             </div>
           </form>
@@ -33,7 +33,7 @@
             <%= cl_image_tag restaurant.photo, height: 50, width: 50, crop: :fill, radius: "max" %>
             <h3><%= restaurant.name %></h3>
             <p><%= restaurant.location %></p>
-            <p><%= restaurant.cuisine %></p>
+            <p class="pills"><%= restaurant.cuisine %></p>
 
             <p><%= restaurant.cuisine.titleize %></p>
 

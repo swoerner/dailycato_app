@@ -3,7 +3,7 @@
     <div class="flex-left">
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
-        <h2><%= @restaurant.address %></h2>
+        <h2><%= @restaurant.location %></h2>
         <div class="booking-field">
           <%= simple_form_for [@restaurant, Booking.new] do |b| %>
             <%= b.input :booking_time, as: :string, input_html: {class: "datepicker"} %>
@@ -33,7 +33,7 @@
         <div class="flex-container">
          <h2 class="box-title">Contact Details</h2>
          <table class="contact-table">
-          <tr><th>Adress</th><td><%= @restaurant.address %></td></tr>
+          <tr><th>Adress</th><td><%= @restaurant.location %></td></tr>
           <tr><th>Telephone</th><td>030 25937930</td></tr>
           <tr><th>Email</th><td>office@tim-raue.com</td></tr>
           <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
