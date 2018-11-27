@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+#users should be able to see the restaurants wihtout need to login
+  skip_before_action :authenticate_user!, only: :index
   def index
     @restaurants = Restaurant.all
     # @restaurants_geo = Restaurant.near(params[:location], 3)
@@ -53,7 +55,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    
+
     params.require(:restaurant).permit(:name, :location, :cuisine, :photo)
   end
 end
