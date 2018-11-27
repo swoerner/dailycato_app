@@ -1,69 +1,69 @@
 /* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+.navbar-dailycato {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.09),0 5px 0 0 rgba(0,0,0,0.05);
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-dailycato-brand img {
+  height: 70px;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+.navbar-dailycato .avatar {
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-dailycato-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-dailycato-item {
   cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
-.navbar-wagon-link {
+.navbar-dailycato-link {
   color: #616668;
   font-size: 14px;
 }
-.navbar-wagon-link:hover {
+.navbar-dailycato-link:hover {
   color: #da552f;
   text-decoration: none;
 }
 
 /* Dropdown menu */
-.navbar-wagon-dropdown-menu {
+.navbar-dailycato-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
-.navbar-wagon-dropdown-menu li > a {
+.navbar-dailycato-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
   font-size: 15px !important;
   line-height: 22px !important;
-  padding: 10px 20px;
+  padding: 7px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.navbar-dailycato-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
 }
-.navbar-wagon-dropdown-menu:before {
+.navbar-dailycato-dropdown-menu:before {
   content: ' ';
   height: 10px;
   width: 10px;
@@ -75,3 +75,40 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.left-logo {
+  height: 66,75px;
+  width: 253,5px;
+  // margin-top: 15px;
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+.navbar-dailycato {
+  padding: 0px 15px;
+}
+
+.navbar-dailycato-right {
+   padding: 0px 5px;
+}
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+.navbar-dailycato {
+  padding: 0px 15px;
+}
+.navbar-dailycato-right {
+   padding: 0px 0px;
+   padding-right: 0px;
+}
+}
+
+
