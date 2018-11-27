@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://foodrevolution.org/wp-content/uploads/2017/12/blog-featured-holiday_-20171215.jpg');">
+
+
+
+  <div class="banner-content">
+    <h1 id="first-header">Hungry?</h1> <br>
+    <p id="second-header">Discover the best daily lunch deals nearby!</p>
+
+    <!-- Die Action Methode legt fest, was nach dem Druecken des Submit Buttons passieren soll. In diesem -->
+    <!-- Fall soll auf eine neue Seite geleitet werden (restaurant path) -->
+    <!-- das Formular bekommt eine Id, das das Plugin dieses aufruft. -->
+    <!-- Damit auf der weitergeleiteten Seite die Werte in der URL stehen, braucht es eine name Klasse. -->
+    <form action="submit" class="js-autocomplete-form">
+      <div class="form-group" >
+        <input type="text" class="form-control inputfield" value="<%= params[:location] %>" name="location" id="restaurant_address" placeholder="e.g. Berlin">
+        <input type="submit" class="form-control find-button" value="FIND DEALS">
+      </div>
+    </form>
+    <section>
+      <a href="#" class="scroll-down" address="true"></a>
+    </section>
+  </div>
+</div>
+
+
+
