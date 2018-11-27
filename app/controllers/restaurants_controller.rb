@@ -11,7 +11,6 @@ class RestaurantsController < ApplicationController
     end
   end
 
-
   def show
     @restaurant = Restaurant.where(id: params[:id])
     @markers = @restaurant.map do |restaurant|
