@@ -65,13 +65,13 @@
 }
 }
 
-.scroll-down {
+.scroll {
   opacity: 1;
   -webkit-transition: all .5s ease-in 3s;
   transition: all .5s ease-in 3s;
 }
 
-.scroll-down {
+.scroll {
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -90,7 +90,7 @@
   transform: scale(1)
 }
 
-.scroll-down:before {
+.scroll {
     position: absolute;
     top: calc(50% - 8px);
     left: calc(50% - 6px);
