@@ -3,6 +3,6 @@
 <%= simple_form_for(@restaurant) do |f| %>
 <%= f.input :name %>
 <%= f.input :cuisine, :collection => ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "vietnamese", "eastern european", "burrito"] %>
-<%= f.input :address %>
+<%= f.input :location %>
 <%= f.submit %>
 <% end %>
