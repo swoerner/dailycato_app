@@ -70,22 +70,28 @@ a {
   border: 1px solid #F46036;
   text-align: center;
   font-weight: bold;
-  font-family: 'Andika', sans-serif;
+  font-family: 'Open Sans', sans-serif;;
 }
 
 .login-button {
- font-family: 'Andika', sans-serif;
+ font-family: 'Open Sans', sans-serif;;
  background-color: transparent;
  color: #F46036;
  width: 5vw;
  margin: 0 auto;
  padding: 5px 30px;
  text-align: center;
- text-decoration: none;
+ text-decoration: none !important;
  font-size: 14px;
  font-weight: lighter;
  border: 1px solid #F46036;
  border-radius: 5px;
+}
+
+.login-button {
+  a {
+    text-decoration: none !important;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
