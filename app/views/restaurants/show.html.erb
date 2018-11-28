@@ -1,9 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1><%= @restaurant.name %></h1>
+      <p><%= @restaurant.location %></p>
+    </div>
+    <div class="col-xs-4">
+      <aside>
+        <div class="restaurant-map">
+          <div
+            id="map"
+            style="width: 100%;
+            height: 100%;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+            >
+          </div>
+        </div>
+        <div class="restaurant-contact">
+          <h2 class="box-title">Contact Details</h2>
+          <table class="contact-table">
+            <tr><th>Adress</th><td><%= @restaurant.location %></td></tr>
+            <tr><th>Telephone</th><td>030 25937930</td></tr>
+            <tr><th>Email</th><td>office@tim-raue.com</td></tr>
+            <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
+          </table>
+        </div>
+        <div class="restaurant-hourse">
+          <h2 class="box-title">Opening Hours</h2>
+          <table class="opening-table">
+            <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
+            <tr><th>Sunday</th><td>Closed</td></tr>
+          </table>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
   <div class="flex-box">
 
     <div class="flex-left">
       <div class="details-restaurant">
-        <h1><%= @restaurant.name %></h1>
-        <h2><%= @restaurant.location %></h2>
+
 
       </div>
     </div>
@@ -13,40 +56,18 @@
         <div class="flex-container map">
           <div class="map-wrapper">
 
-            <div
-            id="map"
-            style="width: 100%;
-            height: 100%;"
 
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAP_API'] %>"
-            ></div>
           </div>
         </div>
 
         <div class="flex-container">
-         <h2 class="box-title">Contact Details</h2>
-         <table class="contact-table">
-          <tr><th>Adress</th><td><%= @restaurant.location %></td></tr>
-          <tr><th>Telephone</th><td>030 25937930</td></tr>
-          <tr><th>Email</th><td>office@tim-raue.com</td></tr>
-          <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
-        </table>
+
       </div>
 
 
 
       <div class="flex-container">
-        <h2 class="box-title">Opening Hours</h2>
-        <table class="opening-table">
-          <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
-          <tr><th>Sunday</th><td>Closed</td></tr>
-        </table>
+
       </div>
 
       <div class="flex-container social-media">

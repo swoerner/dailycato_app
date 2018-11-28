@@ -1,4 +1,7 @@
 class Deal < ApplicationRecord
   belongs_to :restaurant
-  has_many :restaurant
+
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
 end
