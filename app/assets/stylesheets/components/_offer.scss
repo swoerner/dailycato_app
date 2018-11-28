@@ -21,12 +21,15 @@ padding: 10px;
 }
 
 .offer-detail {
-  padding-left: 20px;
-  list-style: none;
-  border-bottom: 1px solid;
-  background: white;
-  display: flex;
-  align-items: center;
+       padding-left: 20px;
+    list-style: none;
+    /* border-bottom: 1px solid; */
+    /* background: white; */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.09), 0 5px 0 0 rgba(0, 0, 0, 0.05);
+    background: white;
+    margin-bottom: 20px;
 }
 
 .input-form-index {
@@ -44,10 +47,10 @@ width: 600px;
     padding-bottom: 5px;
 }
 
-.offers {
-  border: 1px solid;
-  border-color: #939191;
-}
+// .offers {
+//   border: 1px solid;
+//   border-color: #939191;
+// }
 
 .restaurant-offer {
   flex-grow: 1;
@@ -60,6 +63,7 @@ width: 600px;
 .restaurant-details {
   padding-left: 10px;
   min-width: 200px;
+  text-align: center;
 }
 
 .restaurant-details p {
@@ -81,8 +85,13 @@ font-size: 12px;
 }
 
 .offer-link {
-  text-align: center;
+ text-align: center;
   padding-right: 20px;
+
+  .icon {
+    color: #FF7234;
+    font-size: 2em;
+  }
 }
 
 .offer-table {
