@@ -10,13 +10,13 @@
 
 .header-styling {
   h1, h2 {
-  font-size: 35px;
-  font-weight: 250;
-}
+    font-size: 35px;
+    font-weight: 250;
+  }
 
-p {
-  font-size: 16px;
-}
+  p {
+    font-size: 16px;
+  }
 }
 
 .card-description {
@@ -40,7 +40,7 @@ p {
   text-align: center;
 }
 
-.flex-container {
+.flex-container-new {
  height: 350px;
  width: 300px;
  top-padding: 80px;
@@ -138,6 +138,12 @@ body {
     font-size: 20px;
   }
 
+  .flex-container-advantages {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    justify-content: center;
+  }
 }
 
 /*
@@ -155,5 +161,10 @@ body {
     font-size: 45px;
   }
 
+  .flex-container-advantages {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
