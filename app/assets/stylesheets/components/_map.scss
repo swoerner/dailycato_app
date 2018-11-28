@@ -5,11 +5,18 @@
 }
 
 #map {
+
+}
+.map-index {
   flex: 0 0 550px;
   height: 100vh;
   position: sticky !important;
   top: 0px !important;
   margin-left: 10px;
+}
+
+.restaurant-map{
+  height: 300px;
 }
 
 #showpage-map {
@@ -22,7 +29,6 @@ background-size: cover !important;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
 
