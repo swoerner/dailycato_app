@@ -3,6 +3,12 @@
     <div class="col-xs-8">
       <h1><%= @restaurant.name %></h1>
       <p><%= @restaurant.location %></p>
+      <p><% @deals.each  do |d|  %></p>
+      <p><%= d.name %></p>
+      <p><%= d.description %></p>
+      <p><%= d.price %></p>
+      <% end %>
+
     </div>
     <div class="col-xs-4">
       <aside>
