@@ -48,12 +48,12 @@ if (mapElement) {
   }));
 }
 
-const addressInput = document.getElementById('restaurant_address');
+const locationInput = document.getElementById('restaurant_location');
 
-if (addressInput) {
+if (locationInput) {
   const places = require('places.js');
   const placesAutocomplete = places({
-    container: addressInput
+    container: locationInput
   });
 
   placesAutocomplete.on("change", function(e) {
