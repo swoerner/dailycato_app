@@ -22,6 +22,12 @@
     margin-bottom: 30px;
 }
 
+.center-spacing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .inputfield {
   width: 30vw;
   // margin: 8px 0;
@@ -38,7 +44,6 @@
 
 .inputfield {
   font-size: 14px;
-  width: 40vw;
 }
 
 }
@@ -50,11 +55,9 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
 
- .inputfield {
+.inputfield {
   font-size: 14px;
-  width: 40vw;
-
-}
+ }
 
 .banner {
   height: 500px;
@@ -68,6 +71,7 @@
   font-size: 20px;
 }
 }
+
 
 
 
