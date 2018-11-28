@@ -1,29 +1,34 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  def index
+    @restaurants = Restaurant.all
+    @restaurants = @restaurants.where(cuisine: params[:cuisine]) if params[:cuisine].present?
+    @restaurants = @restaurants.where(distance: params[:distance]) if params[:distance].present?
+    @restaurants = @restaurants.where(price_category: params[:price_category]) if params[:price_category].present?
+    @restaurants = @restaurants.where(food_type: params[:food_type]) if params[:food_type].present?
+    @restaurants = @restaurants.where(type_of_deal: params[:type_of_deal]) if params[:type_of_deal].present?
+    
+    @restaurants_geo = @restaurant.near(params[:location], 3)
+    @markers = @restaurants_geo.map do |restaurant|
 
-def index
-  @restaurants = Restaurant.all
-  @restaurants_geo = Restaurant.near(params[:location], 3)
-  @markers = @restaurants_geo.map do |restaurant|
     {
       lng: restaurant.longitude,
       lat: restaurant.latitude,
       infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
-    }
+      }
   end
-end
 
-def show
-  @restaurant = Restaurant.where(id: params[:id])
-  @markers = @restaurant.map do |restaurant|
-    {
-      lng: restaurant.longitude,
-      lat: restaurant.latitude,
-      infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
-    }
+  def show
+    @restaurant = Restaurant.where(id: params[:id])
+    @markers = @restaurant.map do |restaurant|
+      {
+        lng: restaurant.longitude,
+        lat: restaurant.latitude,
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+      }
+    end
+    @restaurant = Restaurant.find(params[:id])
   end
-  @restaurant = Restaurant.find(params[:id])
-end
 
 def new
   @restaurant = Restaurant.new
