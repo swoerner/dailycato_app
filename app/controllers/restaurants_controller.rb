@@ -2,15 +2,15 @@ class RestaurantsController < ApplicationController
 #users should be able to see the restaurants wihtout need to login
   skip_before_action :authenticate_user!, only: :index
   def index
-    # @restaurants_geo = Restaurant.near(params[:location], 3)
-    # @markers = @restaurants_geo.map do |restaurant|
+    @restaurants_geo = Restaurant.near(params[:location], 3)
+    @markers = @restaurants_geo.map do |restaurant|
 
-    # {
-    #   lng: restaurant.longitude,
-    #   lat: restaurant.latitude,
-    #   infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
-    # }
-    # end
+    {
+      lng: restaurant.longitude,
+      lat: restaurant.latitude,
+      infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+    }
+    end
     @restaurants = Restaurant.all
     @restaurants = @restaurants.where(cuisine: params[:cuisine]) if params[:cuisine].present?
     @restaurants = @restaurants.where(distance: params[:distance]) if params[:distance].present?
