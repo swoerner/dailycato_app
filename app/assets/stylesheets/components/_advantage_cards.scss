@@ -42,3 +42,23 @@
   background-size: cover !important;
 }
 
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .advantage-cards {
+    margin-bottom: 0px;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .advantage-cards {
+    margin-bottom: 0px;
+  }
+
+}
