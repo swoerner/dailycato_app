@@ -19,9 +19,6 @@
           <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
         </div>
 
-
-
-
         <% @restaurant.each do |restaurant| %>
 
         <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
