@@ -1,3 +1,5 @@
+<%= render "filter" %>
+
 <div class="index_flex">
   <div class="offers-container">
 
@@ -14,7 +16,7 @@
         </div>
 
         <div class="headline-search">
-          <h1>We have found <%= Restaurant.count %> deals around, for <span id="date"></span>:</h1>
+          <h1>We have found <%= pluralize(@restaurants.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
         </div>
 
 

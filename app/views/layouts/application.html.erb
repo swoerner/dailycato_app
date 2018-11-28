@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
-       <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>TODO</title>
+  <%#= csrf_meta_tags %>
+  <%#= action_cable_meta_tag %>
+  <%= stylesheet_pack_tag "map" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet"> -->
+
   </head>
   <body>
     <%= render 'shared/flashes' %>
     <%= render "components/navbar" %>
     <div class="wrapper">
-    <%= yield %>
+      <%= yield %>
     </div>
-    <%= render "components/footer" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'map' %>
+    <%= render "components/footer" %>
+
 
   </body>
-</html>
+  </html>

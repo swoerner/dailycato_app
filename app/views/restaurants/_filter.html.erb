@@ -1,0 +1,7 @@
+<%= form_tag restaurants_path, :method => :get do %>
+<%= select_tag :cuisine, options_for_select(["modern european", "salad", "gastropub", "asian", "japanese", "italian", "vietnamese", "eastern european", "burrito"]), prompt: "Cuisine" %>
+<%= select_tag :price_category, options_for_select(["€", "€€", "€€€"]), prompt: "Price" %>
+<%= select_tag :food_type, options_for_select(["pasta", "soup", "bread"]), prompt: "Food Type" %>
+<%= select_tag :type_of_deal, options_for_select(["weekly", "daily"]), prompt: "Deal Type" %>
+<%= submit_tag 'Filter' %>
+<% end %>
