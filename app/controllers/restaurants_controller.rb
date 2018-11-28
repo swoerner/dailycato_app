@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
       lat: restaurant.latitude,
       infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
     }
-    end
+      
     @restaurants = Restaurant.all
     @restaurants = @restaurants.where(cuisine: params[:cuisine]) if params[:cuisine].present?
     @restaurants = @restaurants.where(distance: params[:distance]) if params[:distance].present?
