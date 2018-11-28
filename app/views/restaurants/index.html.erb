@@ -16,13 +16,13 @@
         </div>
 
         <div class="headline-search">
-          <h1>We have found <%= pluralize(@restaurants.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
+          <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
         </div>
 
 
 
 
-        <% @restaurants.each do |restaurant| %>
+        <% @restaurant.each do |restaurant| %>
 
         <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
           <div class="offer-count marker-pin">
