@@ -20,6 +20,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.where(id: params[:id])
+    @deals = Deal.where(restaurant_id: params[:id])
     @markers = @restaurant.map do |restaurant|
       {
         lng: restaurant.longitude,
