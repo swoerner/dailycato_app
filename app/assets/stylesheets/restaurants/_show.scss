@@ -43,7 +43,6 @@ p {
 .flex-box {
   display: flex;
   margin-top: 20px;
-
 }
 
 .flex-left {
@@ -81,6 +80,16 @@ p {
   margin-left: 20px;
   width: 65vw;
   height: 30vh;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 400;
+  }
 }
 
 .map-wrapper {
@@ -121,3 +130,40 @@ p {
 .offer-location-search {
   background: #f4f4f4 !important;
 }
+
+.checked {
+  color: orange;
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .flex-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .flex-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex-container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+

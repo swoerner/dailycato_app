@@ -35,9 +35,12 @@
 }
 
 .advantage-description {
-  font-size: 14px;
   margin-top: 15px;
   text-align: center;
+
+  p {
+    font-size: 13px;
+  }
 }
 
 .flex-container-new {
@@ -140,11 +143,19 @@ body {
 
   .flex-container-advantages {
     flex-direction: column;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 20px;
     justify-content: center;
+    align-items: center;
+  }
+
+  .advantage-description {
+    p {
+      font-size: 12px;
+    }
   }
 }
+
 
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -163,8 +174,15 @@ body {
 
   .flex-container-advantages {
     flex-direction: column;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+  .advantage-description {
+    p {
+      font-size: 12px;
+    }
   }
 }
+
 
