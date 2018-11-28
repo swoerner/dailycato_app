@@ -37,12 +37,13 @@ p {
 }
 
 .social-media{
-  height: 10vw !important;
+  height: 20vw !important;
 }
 
 .flex-box {
   display: flex;
   margin-top: 20px;
+  // position: absolute
 }
 
 .flex-left {
@@ -50,6 +51,7 @@ p {
 }
 
 .flex-container {
+  // position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -58,7 +60,7 @@ p {
   height: 20vw;
   padding-right: 10px ;
   padding-left: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   padding-top: 0px;
   float: right;
   margin-bottom: 15px;
@@ -143,8 +145,21 @@ p {
     align-items: center;
   }
   .flex-container {
-    width: 100vw;
-    height: 100vh;
+    width: 90vw;
+    height: 30vh;
+    padding-right: 5px ;
+    padding-left: 5px;
+    padding-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+  }
+
+  table {
+    width: 70vw;
+
+    th, td{
+      font-size: 14px;
+    }
   }
 
 }
@@ -162,8 +177,21 @@ p {
   }
 
   .flex-container {
-    width: 100vw;
-    height: 100vh;
+   width: 90vw;
+   height: 30vh;
+   padding-right: 5px ;
+   padding-left: 5px;
+   padding-top: 0px;
+   margin-bottom: 15px;
+   margin-right: 0px;
+ }
+
+ table {
+  width: 70vw;
+
+  th, td {
+    font-size: 14px;
   }
+}
 }
 
