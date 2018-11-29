@@ -1,4 +1,4 @@
-<%= render "filter" %>
+
 
 <div class="index_flex">
   <div class="offers-container">
@@ -14,8 +14,13 @@
 <button type="submit"  class="search-index-btn">
     <i class="fa fa-arrow-circle-right fa-lg"></i>
 </button>
+<div class="filteropen"><i class="fab fa-searchengin"></i></div>
   </div>
+
           </form>
+          <div class="filtercontainer">
+            <%= render "filter" %>
+          </div>
         </div>
 
         <div class="headline-search">
@@ -96,3 +101,11 @@
   <a class="dropdown-item" href="#">Action</a>
   <a class="dropdown-item" href="#">Another action</a>
 </div>
+
+<script>
+  a = document.querySelector('.filteropen')
+  b = document.querySelector('.filtercontainer')
+  a.addEventListener('click', function(){
+    b.classList.toggle('filterisopen')
+  })
+</script>
