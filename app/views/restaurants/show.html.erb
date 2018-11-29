@@ -1,90 +1,89 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-8">
-      <h1><%= @restaurant.name %></h1>
-      <p><%= @restaurant.location %></p>
-      <p><% @deals.each  do |d|  %></p>
-      <p><%= d.name %></p>
-      <p><%= d.description %></p>
-      <p><%= d.price %></p>
-      <% end %>
+<div class="flex-box">
 
-    </div>
-    <div class="col-xs-4">
-      <aside>
-        <div class="restaurant-map">
-          <div
-            id="map"
-            style="width: 100%;
-            height: 100%;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAP_API'] %>"
-            >
-          </div>
-        </div>
-        <div class="restaurant-contact">
-          <h2 class="box-title">Contact Details</h2>
-          <table class="contact-table">
-            <tr><th>Adress</th><td><%= @restaurant.location %></td></tr>
-            <tr><th>Telephone</th><td>030 25937930</td></tr>
-            <tr><th>Email</th><td>office@tim-raue.com</td></tr>
-            <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
-          </table>
-        </div>
-        <div class="restaurant-hourse">
-          <h2 class="box-title">Opening Hours</h2>
-          <table class="opening-table">
-            <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
-            <tr><th>Sunday</th><td>Closed</td></tr>
-          </table>
-        </div>
-      </aside>
-    </div>
-  </div>
-</div>
-
-  <div class="flex-box">
-
-    <div class="flex-left">
+  <div class="flex-left">
+    <div class="outter-box">
+      <div class="restaurant-picture">
+        <img src="https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/35402_134518579904318_4915185_n.jpg?_nc_cat=109&_nc_ht=scontent-ber1-1.xx&oh=2fb1385029fafad4d74dc346db2dbd92&oe=5CA39A34" alt="Tim-Raue-Logo">
+      </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
+        <p><%= @restaurant.location %></p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <h2><%= @restaurant.location %></h2>
-
+        <span class="fa fa-star"></span>
+      </div>
+      <div class="category-tag">
+        <p>Modern-Asian</p>
       </div>
     </div>
 
-    <div class="flex-right">
-      <div class="flex-container-all-boxes">
-        <div class="flex-container map">
-          <div class="map-wrapper">
-
-
-          </div>
-        </div>
-
-        <div class="flex-container">
-
+    <div class="details-deals">
+      <div class="deal-title">
+        <p> Schnitzel </p>
       </div>
+      <div class="deal-description-price">
+        <p> mit Zigeunersauße, Bratkartoffeln und Gemüse</p>
+        <div class="deal-price"<p>13€</p></div>
+      </div>
+    </div>
+
+     <div class="details-deals">
+      <div class="deal-title">
+        <p> Lachs </p>
+      </div>
+      <div class="deal-description-price">
+        <p> mit Salat, Mikrokrümmeln und Obst</p>
+        <div class="deal-price"<p>13€</p></div>
+      </div>
+    </div>
+  </div>
 
 
+  <div class="flex-right">
+    <div class="flex-container-all-boxes">
+      <div class="flex-container map">
+        <div class="map-wrapper">
+
+          <div
+          id="map"
+          style="width: 100%;
+          height: 100%;"
+
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+          ></div>
+        </div>
+      </div>
 
       <div class="flex-container">
+       <h2 class="box-title">Contact Details</h2>
+       <table class="contact-table">
+        <tr><th>Adress</th><td><%= @restaurant.location %></td></tr>
+        <tr><th>Telephone</th><td>030 25937930</td></tr>
+        <tr><th>Email</th><td>office@tim-raue.com</td></tr>
+        <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
+      </table>
+    </div>
 
-      </div>
 
-      <div class="flex-container social-media">
-        <h2 class="box-title">Social Media</h2>
-      </div>
+
+    <div class="flex-container">
+      <h2 class="box-title">Opening Hours</h2>
+      <table class="opening-table">
+        <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
+        <tr><th>Sunday</th><td>Closed</td></tr>
+      </table>
+    </div>
+
+    <div class="flex-container social-media">
+      <h2 class="box-title">Social Media</h2>
     </div>
   </div>
 </div>

@@ -80,18 +80,56 @@ p {
 
 .details-restaurant {
   margin-left: 20px;
-  width: 65vw;
-  height: 30vh;
+  margin-bottom: 35px;
 
   h1 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 350;
+    margin-top: 0px;
+    padding-top: 0px;
   }
 
-  h2 {
-    font-size: 20px;
+  p {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+.outter-box {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  justify-content: flex-start;
+}
+
+.deal-description-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.restaurant-picture img {
+    height: 100px;
+    width: 75px;
+}
+
+.details-deals {
+  margin-left: 20px;
+  width: 65vw;
+  margin-bottom: 15px;
+  // height: 30vh;
+  // display: flex;
+
+  p {
+    font-size: 16px;
     font-weight: 400;
   }
+}
+
+.deal-price {
+  margin-right: 80px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .map-wrapper {
