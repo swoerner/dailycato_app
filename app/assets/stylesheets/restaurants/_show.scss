@@ -47,7 +47,7 @@ p {
 }
 
 .flex-left {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .flex-container {
@@ -98,7 +98,7 @@ p {
 .outter-box {
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
+  // margin-left: 20px;
   justify-content: flex-start;
 }
 
@@ -106,17 +106,24 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
 .restaurant-picture img {
-    height: 100px;
-    width: 75px;
+  height: 100px;
+  width: 75px;
+}
+
+.all-deals {
+ margin-right: 20px;
+ width: 100%;
 }
 
 .details-deals {
-  margin-left: 20px;
-  width: 65vw;
+  width: 65.9vw;
   margin-bottom: 15px;
+  border-bottom: 0.5px solid gray;
+  border-bottom-width: thin;
   // height: 30vh;
   // display: flex;
 
@@ -222,6 +229,23 @@ p {
     }
   }
 
+  .deal-price {
+    margin-right: 0px;
+  }
+
+  .all-deals {
+   margin-right: 0px;
+   width: 100%;
+ }
+
+ .details-deals {
+  width: 320px;
+}
+
+.outter-box {
+ width: 300px;
+}
+
 }
 
 /*
@@ -242,16 +266,38 @@ p {
    padding-right: 5px ;
    padding-left: 5px;
    padding-top: 0px;
+   padding-bottom: 20px !important;
    margin-bottom: 15px;
    margin-right: 0px;
  }
 
- table {
+ .deal-price {
+  margin-right: 0px;
+}
+
+.all-deals {
+ margin-right: 0px;
+ width: auto;
+}
+
+.details-restaurant {
+  margin-left: 20px;
+  margin-bottom: 35px;
+}
+
+table {
   width: 70vw;
 
   th, td {
     font-size: 14px;
   }
+}
+
+.details-deals {
+  width: 320px;
+}
+.outter-box {
+  width: 320px;
 }
 }
 
