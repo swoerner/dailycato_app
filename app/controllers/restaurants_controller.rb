@@ -13,7 +13,8 @@ class RestaurantsController < ApplicationController
       {
         lng: restaurant.longitude,
         lat: restaurant.latitude,
-        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) },
+        id: restaurant.id
       }
     end
   end
