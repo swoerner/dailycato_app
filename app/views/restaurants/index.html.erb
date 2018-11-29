@@ -1,5 +1,3 @@
-<%= render "filter" %>
-
 <div class="index_flex">
   <div class="offers-container">
 
@@ -7,14 +5,21 @@
       <div class="offers-container">
 
         <div class ="helper-bar">
-          <form class="offer-location-search" action="<%= restaurants_path %>">
-              <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
-             <button type="submit"  class="search-index-btn">
-              <i class="fa fa-arrow-circle-right fa-lg"></i>
-            </button>
-        </form>
-      </div>
+          <form class="form-inline offer-location-search" action="<%= restaurants_path %>">
+            <div class="form-group" >
+ <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
 
+<button type="submit"  class="search-index-btn">
+    <i class="fa fa-arrow-circle-right fa-lg"></i>
+</button>
+<div class="filteropen"><i class="fab fa-searchengin"></i></div>
+  </div>
+
+          </form>
+          <div class="filtercontainer">
+            <%= render "filter" %>
+          </div>
+        </div>
       <div class="headline-search">
         <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
       </div>
@@ -71,3 +76,12 @@
   <a class="dropdown-item" href="#">Action</a>
   <a class="dropdown-item" href="#">Another action</a>
 </div>
+
+<script>
+  a = document.querySelector('.filteropen')
+  b = document.querySelector('.filtercontainer')
+  a.addEventListener('click', function(){
+    b.classList.toggle('filterisopen')
+  })
+</script>
+

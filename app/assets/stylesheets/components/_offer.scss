@@ -105,4 +105,24 @@ font-size: 12px;
   border-radius: 25px;
   margin: 10px;
 }
+.filteropen {
+  height: 100%;
+  cursor: pointer;
+
+}
+.filtercontainer {
+      width: 37vw;
+    height: 0vh;
+    background-color: red;
+    // position: absolute;
+    z-index: 10;
+    // top: 20vh;
+    // left: 4vw;
+    opacity: 0;
+    transition: all ease 1s;
+
+}
+.filterisopen {
+  height: 38vh;
+  opacity:1}
 
