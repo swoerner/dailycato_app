@@ -7,96 +7,71 @@
       <div class="offers-container">
 
         <div class ="helper-bar">
-          <form class="form-inline offer-location-search" action="<%= restaurants_path %>">
-            <div class="form-group" >
- <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
-
-<button type="submit"  class="search-index-btn">
-    <i class="fa fa-arrow-circle-right fa-lg"></i>
-</button>
+          <form class="offer-location-search" action="<%= restaurants_path %>">
+              <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
+             <button type="submit"  class="search-index-btn">
+              <i class="fa fa-arrow-circle-right fa-lg"></i>
+            </button>
+       
 <div class="filteropen"><i class="fab fa-searchengin"></i></div>
   </div>
-
           </form>
-          <div class="filtercontainer">
+        <div class="filtercontainer">
             <%= render "filter" %>
           </div>
-        </div>
-
-        <div class="headline-search">
-          <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
-        </div>
-
-        <% @restaurant.each do |restaurant| %>
-
-        <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
-          <div class="offer-count marker-pin">
-
-            <p><%= restaurant.id %></p>
-
-          </div>
-         <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
-          <div class="restaurant-details">
-            <%= cl_image_tag restaurant.photo, height: 50, width: 50, crop: :fill, radius: "max" %>
-            <h3><%= restaurant.name %></h3>
-            <p><%= restaurant.location %></p>
-            <p class="pills"><%= restaurant.cuisine %></p>
-
-            <p><%= restaurant.cuisine.titleize %></p>
-
-          </div>
-          <div class="restaurant-offer">
-            <div class="offer-name">
-              <div class="flex-text">
-                <p><strong>Schnitzeltag </strong></p>
-                <p>Das kannst du dir nicht entgehen lassen</p>
-              </div>
-              <div class="offer-price">
-                <p>6.99€</p>
-              </div>
-            </div>
-            <div class="offer-name">
-              <div class="flex-text">
-                <p><strong>Soup of the day </strong></p>
-                <p>Enjoy our delicious soup</p>
-              </div>
-              <div class="offer-price">
-                <p>3.99€</p>
-              </div>
-            </div>
-            <div class="offer-name">
-              <div class="flex-text">
-                <p><strong>Spaghetti Carbonara</strong></p>
-                <p>Our world-famous noudles for you </p>
-              </div>
-              <div class="offer-price">
-                <p>4.99€</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="offer-link">
-            <p>
-              <%= link_to restaurant_path(restaurant) do %>
-                <i class="fas fa-angle-right icon"></i>
-              <% end %>
-            </p>
-          </div>
-        </div>
-        <% end %>
       </div>
-      <div
+      <div class="headline-search">
+        <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
+      </div>
+      <% @restaurant.each do |restaurant| %>
+      <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
+        <div class="offer-count marker-pin">
+          <p><%= restaurant.id %></p>
+        </div>
+        <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
+        <div class="restaurant-details">
+          <%= cl_image_tag restaurant.photo, height: 50, width: 50, crop: :fill, radius: "max" %>
+          <h3><%= restaurant.name %></h3>
+          <p><%= restaurant.location %></p>
+          <!-- Der Anfangsbuchstabe jedes Wortes wird groß geschrieben -->
+          <p><%= restaurant.cuisine.titleize %></p>
+        </div>
+        <div class="restaurant-offer">
+          <p><% restaurant.deals.each  do |d|  %></p>
+          <div class="offer-name">
+            <div class="flex-text">
+              <p><strong><%= d.name %></strong></p>
+              <p><%= d.description %></p>
+            </div>
+            <div class="offer-price">
+              <p><%= d.price %>€</p>
+            </div>
+          </div>
+          <% end %>
+        </div>
 
-      id="map"
-      class="map-index"
-
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAP_API'] %>"
-      ></div>
+        <div class="offer-link">
+          <p>
+            <%= link_to restaurant_path(restaurant) do %>
+            <i class="fas fa-angle-right icon"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <% end %>
     </div>
-  </div>
+    <div
 
-  <div class="dropdown-menu">
+    id="map"
+    class="map-index"
+
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+    ></div>
+  </div>
+</div>
+
+<div class="dropdown-menu">
   <h6 class="dropdown-header">Dropdown header</h6>
   <a class="dropdown-item" href="#">Action</a>
   <a class="dropdown-item" href="#">Another action</a>
