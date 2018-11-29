@@ -80,18 +80,56 @@ p {
 
 .details-restaurant {
   margin-left: 20px;
-  width: 65vw;
-  height: 30vh;
+  margin-bottom: 35px;
 
   h1 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 350;
+    margin-top: 0px;
+    padding-top: 0px;
   }
 
-  h2 {
-    font-size: 20px;
+  p {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+.outter-box {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  justify-content: flex-start;
+}
+
+.deal-description-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.restaurant-picture img {
+    height: 100px;
+    width: 75px;
+}
+
+.details-deals {
+  margin-left: 20px;
+  width: 65vw;
+  margin-bottom: 15px;
+  // height: 30vh;
+  // display: flex;
+
+  p {
+    font-size: 16px;
     font-weight: 400;
   }
+}
+
+.deal-price {
+  margin-right: 80px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .map-wrapper {
@@ -101,7 +139,21 @@ p {
   max-width: 100%;
   max-height: 100%;
 }
+.filtercontainer {
+      width: 37vw;
+    height: 0vh;
+    background-color: red;
+    // position: absolute;
+    z-index: 10;
+    // top: 20vh;
+    // left: 4vw;
+    opacity: 0;
+    transition: all ease 1s;
 
+}
+.filterisopen {
+  height: 38vh;
+  opacity:1}
 #map {
   position: absolute;
   top: 0;
@@ -114,9 +166,17 @@ p {
   padding-bottom: 10px;
   padding-top: 10px;
 }
+.filteropen {
+  height: 100%;
+  cursor: pointer;
 
+}
+.algolia-places {
+  width: auto !important;
+}
 .form-group {
   width: 30vw;
+  display: flex !important;
 }
 
 .booking-field {

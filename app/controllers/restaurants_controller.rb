@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @restaurant = Restaurant.all
     @restaurant = @restaurant.where(cuisine: params[:cuisine]) if params[:cuisine].present?
