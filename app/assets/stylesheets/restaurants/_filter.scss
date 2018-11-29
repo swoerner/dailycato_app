@@ -1,0 +1,72 @@
+.category-price {
+  background-color: #ED6F33;
+  min-width: 85px;
+  max-width: 85px;
+  height: 25px;
+  color: white;
+  font-weight: 350;
+  // padding-top: 3px;
+  // padding-left: 11px;
+  // padding-right: 11px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.category-food {
+  background-color: white;
+  min-width: 85px;
+  max-width: 85px;
+  height: 25px;
+  // padding-top: 3px;
+  // padding-left: 11px;
+  // padding-right: 11px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 40px;
+}
+
+.price-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: top !important;
+  justify-content: space-evenly;
+}
+
+.filter-title {
+  p {
+    font-size: 20px;
+    font-weight: 350px;
+    margin-top: 20px;
+  }
+}
+
+.category-flex-container {
+  display: flex;
+  flex-direction: row !important;
+  align-content: space-evenly;
+}
+
+
+.filtercontainer {
+  // width: 50vw;
+  height: 0vh;
+  background-color: white;
+    // position: absolute;
+    z-index: 10;
+    // top: 20vh;
+    // left: 4vw;
+    opacity: 0;
+    transition: all ease 1s;
+
+
+  }
+  .filterisopen {
+    height: 38vh;
+    border: 1px solid black;
+    opacity:1}
+

@@ -1,7 +1,71 @@
-<%= form_tag restaurants_path, :method => :get do %>
-<%= select_tag :cuisine, options_for_select(["modern european", "salad", "gastropub", "asian", "japanese", "italian", "vietnamese", "eastern european", "burrito"]), prompt: "Cuisine" %>
-<%= select_tag :price_category, options_for_select(["€", "€€", "€€€"]), prompt: "Price" %>
-<%= select_tag :food_type, options_for_select(["pasta", "soup", "bread"]), prompt: "Food Type" %>
-<%= select_tag :type_of_deal, options_for_select(["weekly", "daily"]), prompt: "Deal Type" %>
-<%= submit_tag 'Filter' %>
-<% end %>
+<div class="filter-title">
+  <p> Price </p>
+</div>
+
+
+
+<div class="price-flex-container">
+  <span class="my-checkbox">  <label class="category-price">
+    <input type="checkbox" class="hidden" name="Price" value="1">€<br>
+  </label>
+</span>
+
+<span class="my-checkbox">  <label class="category-price">
+  <input type="checkbox" class="hidden" name="Price" value="2">€€<br>
+</label>
+</span>
+
+<span class="my-checkbox">  <label class="category-price">
+  <input type="checkbox" class="hidden" name="Price" value="3">€€€<br>
+</label></span>
+
+<span class="my-checkbox">  <label class="category-price">
+  <input type="checkbox" class="hidden" name="Price" value="4">€€€€<br>
+</label>
+</span>
+
+<span class="my-checkbox">  <label class="category-price">
+  <input type="checkbox" class="hidden" name="Price" value="5">€€€€€<br>
+</label>
+</span>
+</div>
+
+<div class="filter-title">
+  <p> Cuisines </p>
+</div>
+
+
+<div class="grid-container">
+  <div class="grid-item">
+    <span class="checkbox">  <label class="category-food">
+      <input type="checkbox" class="" name="Price" value="Korean">Korean<br>
+    </label>
+  </span>
+</div>
+<div class="grid-item">
+  <span class="checkbox">  <label class="category-food">
+    <input type="checkbox" class="" name="Price" value="American">American<br>
+  </label>
+</span>
+</div>
+<div class="grid-item">
+  <span class="checkbox">  <label class="category-food">
+    <input type="checkbox" class="" name="Price" value="Salad">Salad<br>
+  </label></span>
+</div>
+<div class="grid-item">
+  <span class="checkbox">  <label class="category-food">
+    <input type="checkbox" class="" name="Price" value="Italian">Italian<br>
+  </label>
+</span>
+</div>
+<div class="grid-item">
+  <span class="checkbox">  <label class="category-food">
+    <input type="checkbox" class="" name="Price" value="Japanese">Japanese<br>
+  </label>
+</span>
+</div>
+</div>
+
+
+
