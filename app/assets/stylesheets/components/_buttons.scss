@@ -12,6 +12,27 @@
   font-weight: lighter;
 }
 
+.category-tag {
+  border-radius: 6px;
+  background-color: #3E9B4D;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  height: 20px;
+  width: 85px;
+  text-align: center;
+  vertical-align: middle !important;
+  position: relative;
+  margin-top: 8px;
+
+  p {
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
 .booking-button {
   font-family: 'Open Sans', sans-serif;
   background-color: #3E9B4D;

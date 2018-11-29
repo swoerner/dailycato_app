@@ -7,6 +7,7 @@
       <div class="offers-container">
 
         <div class ="helper-bar">
+<<<<<<< HEAD
           <form class="offer-location-search" action="<%= restaurants_path %>">
             <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
             <button type="submit"  class="search-index-btn">
@@ -21,6 +22,24 @@
           <%= render "filter" %>
         </div>
       </div>
+=======
+          <form class="form-inline offer-location-search" action="<%= restaurants_path %>">
+            <div class="form-group" >
+ <input type="text" class="input-form-index" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
+
+<button type="submit"  class="search-index-btn">
+    <i class="fa fa-arrow-circle-right fa-lg"></i>
+</button>
+<div class="filteropen"><i class="fab fa-searchengin"></i></div>
+  </div>
+
+          </form>
+          <div class="filtercontainer">
+            <%= render "filter" %>
+          </div>
+        </div>
+
+>>>>>>> bce52ccd3427326115048d47b094fa58d2405b6e
       <div class="headline-search">
         <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
       </div>
@@ -85,3 +104,4 @@
     b.classList.toggle('filterisopen')
   })
 </script>
+
