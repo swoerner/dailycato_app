@@ -1,0 +1,16 @@
+<div>
+  <h1>New Booking</h1>
+  <div class="container">
+    <div class="row">
+      <%= simple_form_for  [@restaurant, @deals, @booking] do |b| %>
+        <!-- <div class="col-xl"> -->
+          <%= b.input :booking_time, as: :string, required: false, input_html: {class: "datepicker form-inline"}  %>
+          <%= b.association :deal, collection: @restaurant.deals %>
+        <!-- </div> -->
+        <!-- <div class="col-xl"> -->
+          <%= b.submit "Book" %>
+        <!-- </div> -->
+      <% end %>
+    </div>
+  </div>
+</div>
