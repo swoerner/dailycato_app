@@ -12,8 +12,22 @@
 
 ActiveRecord::Schema.define(version: 2018_11_30_135909) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "booking_type"
+    t.time "booking_time"
+    t.bigint "user_id"
+    t.bigint "restaurant_id"
+    t.bigint "deal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deal_id"], name: "index_bookings_on_deal_id"
+    t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "business_hours", force: :cascade do |t|
     t.string "day"
@@ -99,6 +113,9 @@ ActiveRecord::Schema.define(version: 2018_11_30_135909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "deals"
+  add_foreign_key "bookings", "restaurants"
+  add_foreign_key "bookings", "users"
   add_foreign_key "business_hours", "restaurants"
   add_foreign_key "deals", "restaurants"
   add_foreign_key "restaurants", "users"

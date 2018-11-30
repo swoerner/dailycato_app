@@ -21,6 +21,26 @@ p {
   font-size: 18px;
 }
 
+.contact-display {
+padding-left: 30px;
+// padding-top: 30px;
+width: 30%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.contact-display a {
+  color: black;
+  opacity: 0.6;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.contact-display a:hover {
+  opacity: 1;
+}
+
 .contact-table{
   margin-top: 45px;
   font-size: 18px;
@@ -42,12 +62,20 @@ p {
 
 .flex-box {
   display: flex;
-  margin-top: 20px;
+
+
+  margin: 20px 8% 0 8%;
   // position: absolute
 }
 
 .flex-left {
-  margin-left: 20px;
+  // margin-left: 30px;
+  flex-grow: 1
+}
+
+.flex-right {
+  // margin-right: 20px;
+
 }
 
 .flex-container {
@@ -120,10 +148,12 @@ p {
 }
 
 .details-deals {
-  width: 65.9vw;
   margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 0.5px solid gray;
   border-bottom-width: thin;
+  margin: 0 20px 0 0;
   // height: 30vh;
   // display: flex;
 
@@ -147,9 +177,9 @@ p {
   max-height: 100%;
 }
 .filtercontainer {
-      width: 37vw;
-    height: 0vh;
-    background-color: red;
+  width: 37vw;
+  height: 0vh;
+  background-color: red;
     // position: absolute;
     z-index: 10;
     // top: 20vh;
@@ -157,96 +187,96 @@ p {
     opacity: 0;
     transition: all ease 1s;
 
-}
-.filterisopen {
-  height: 38vh;
-  opacity:1}
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  margin: 0;
-}
-
-.map {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-.filteropen {
-  height: 100%;
-  cursor: pointer;
-
-}
-.algolia-places {
-  width: auto !important;
-}
-.form-group {
-  width: 30vw;
-  display: flex !important;
-}
-
-.booking-field {
-  padding-top: 90px;
-  text-align: center;
-}
-
-.booking_booking_time {
-  width: 265.06px;
-
-}
-
-.offer-location-search {
-  background: #f4f4f4 !important;
-}
-
-.checked {
-  color: orange;
-}
-
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .flex-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
-  .flex-container {
-    width: 90vw;
-    height: 30vh;
-    padding-right: 5px ;
-    padding-left: 5px;
-    padding-top: 0px;
-    margin-bottom: 15px;
-    margin-right: 0px;
-  }
-
-  table {
-    width: 70vw;
-
-    th, td{
-      font-size: 14px;
+  .filterisopen {
+    height: 38vh;
+    opacity:1}
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
     }
-  }
 
-  .deal-price {
-    margin-right: 0px;
-  }
+    .map {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .filteropen {
+      height: 100%;
+      cursor: pointer;
 
-  .all-deals {
-   margin-right: 0px;
-   width: 100%;
+    }
+    .algolia-places {
+      width: auto !important;
+    }
+    .form-group {
+      width: 30vw;
+      display: flex !important;
+    }
+
+    .booking-field {
+      padding-top: 90px;
+      text-align: center;
+    }
+
+    .booking_booking_time {
+      width: 265.06px;
+
+    }
+
+    .offer-location-search {
+      background: #f4f4f4 !important;
+    }
+
+    .checked {
+      color: orange;
+    }
+
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      .flex-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .flex-container {
+        width: 90vw;
+        height: 30vh;
+        padding-right: 5px ;
+        padding-left: 5px;
+        padding-top: 0px;
+        margin-bottom: 15px;
+        margin-right: 0px;
+      }
+
+      table {
+        width: 70vw;
+
+        th, td{
+          font-size: 14px;
+        }
+      }
+
+      .deal-price {
+        margin-right: 0px;
+      }
+
+      .all-deals {
+       margin-right: 0px;
+       width: 100%;
+     }
+
+     .details-deals {
+      width: 320px;
+    }
+
+    .outter-box {
+     width: 300px;
+   }
+
  }
-
- .details-deals {
-  width: 320px;
-}
-
-.outter-box {
- width: 300px;
-}
-
-}
 
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -300,4 +330,3 @@ table {
   width: 320px;
 }
 }
-

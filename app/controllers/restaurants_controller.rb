@@ -26,7 +26,8 @@ class RestaurantsController < ApplicationController
       {
         lng: restaurant.longitude,
         lat: restaurant.latitude,
-        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) },
+        id: ''
       }
     end
     @restaurant = Restaurant.find(params[:id])
