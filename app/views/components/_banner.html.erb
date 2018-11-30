@@ -8,14 +8,16 @@
     <!-- Fall soll auf eine neue Seite geleitet werden (restaurant path) -->
     <!-- das Formular bekommt eine Id, das das Plugin dieses aufruft. -->
     <!-- Damit auf der weitergeleiteten Seite die Werte in der URL stehen, braucht es eine name Klasse. -->
-    <div class="center-spacing">
-      <form action="<%= restaurants_path %>" class="js-autocomplete-form">
-        <div class="form-group">
-          <input type="text" class="form-control inputfield" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
-          <input type="submit" class="form-control find-button" value="FIND DEALS">
-        </div>
-      </form>
-    </div>
+
+    <form action="<%= restaurants_path %>" class="js-autocomplete-form">
+     <!-- <div class="center-spacing"> -->
+      <div class="form-group">
+        <input type="text" class="form-control inputfield" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
+      </div>
+      <div class="form-group banner-spacing">
+        <input type="submit" class="form-control find-button" value="FIND DEALS">
+      </div>
+    </form>
   </div>
 </div>
 
