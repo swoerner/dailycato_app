@@ -9,22 +9,19 @@
          <button type="submit"  class="search-index-btn">
           <i class="fa fa-arrow-circle-right fa-lg"></i>
         </button>
-        <div class="filteropen"><i class="fab fa-searchengin"></i></div>
+        <div class="filteropen">
+          <div class="filter-button">Filter</div>
+        </div>
+        </div>
+
+      </form>
+      <div class="filtercontainer">
+        <%= render "filter" %>
       </div>
-
-    </form>
-    <div class="filtercontainer">
-      <%= render "filter" %>
     </div>
-  </div>
 
-  <div class="headline-search">
-    <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
-  </div>
-  <% @restaurant.each do |restaurant| %>
-  <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
-    <div class="offer-count marker-pin">
-      <p><%= restaurant.id %></p>
+    <div class="headline-search">
+      <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
     </div>
     <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
     <div class="restaurant-details">
@@ -44,28 +41,27 @@
         <div class="offer-price">
           <p><%= d.price %>€</p>
         </div>
-      </div>
-      <% end %>
-    </div>
-
-    <div class="offer-link">
-      <p>
-        <%= link_to restaurant_path(restaurant) do %>
-        <i class="fas fa-angle-right icon"></i>
         <% end %>
-      </p>
+      </div>
+
+      <div class="offer-link">
+        <p>
+          <%= link_to restaurant_path(restaurant) do %>
+          <i class="fas fa-angle-right icon"></i>
+          <% end %>
+        </p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-<div
+  <div
 
-id="map"
-class="map-index"
+  id="map"
+  class="map-index"
 
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAP_API'] %>"
-></div>
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+  ></div>
 </div>
 </div>
 
