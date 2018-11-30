@@ -5,10 +5,14 @@ table {
 
 th {
   text-align: left;
+  font-size: 14px;
+  font-weight: 550;
 }
 
 td {
   text-align: right;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 p {
@@ -22,7 +26,7 @@ p {
 }
 
 .contact-display {
-padding-left: 30px;
+  padding-left: 30px;
 // padding-top: 30px;
 width: 30%;
 display: flex;
@@ -39,6 +43,16 @@ justify-content: center;
 }
 .contact-display a:hover {
   opacity: 1;
+}
+
+.booking-setion {
+ margin-top: 20px !important;
+ padding-top: 20px;
+
+ a {
+  margin-top: 20px !important;
+  padding-top: 20px;
+}
 }
 
 .contact-table{
@@ -83,7 +97,7 @@ justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 2px solid #F46036;
+  border: 1px solid #F46036;
   width: 30vw;
   height: 20vw;
   padding-right: 10px ;
@@ -148,7 +162,7 @@ justify-content: center;
 }
 
 .details-deals {
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 0.5px solid gray;
@@ -329,4 +343,8 @@ table {
 .outter-box {
   width: 320px;
 }
+}
+
+.today {
+background-color: #3E9B4D;
 }
