@@ -9,7 +9,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.restaurant = @restaurant
-    @booking.save
+    if @booking.save
+      flash[:notice] = "Booking was successful!"
+      redirect_to restaurant_path(@restaurant)
+    else
+      render 'new'
+    end
   end
 
   def booking_params

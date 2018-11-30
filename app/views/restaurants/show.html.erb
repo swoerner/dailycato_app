@@ -8,8 +8,9 @@
       <p><%= d.description %></p>
       <p><%= d.price %></p>
       <% end %>
-
     </div>
+     <%= link_to "Book Now", new_restaurant_booking_path(@restaurant), class: "btn btn-primary"%>
+<!-- <button type="button" class="btn btn-primary">Book Now</button> -->
     <div class="col-xs-4">
       <aside>
         <div class="restaurant-map">
