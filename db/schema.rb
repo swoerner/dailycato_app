@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_140224) do
+ActiveRecord::Schema.define(version: 2018_11_30_135909) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +30,12 @@ ActiveRecord::Schema.define(version: 2018_11_29_140224) do
   end
 
   create_table "business_hours", force: :cascade do |t|
-    t.time "open_time"
-    t.time "closed_time"
     t.string "day"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "closed_time"
+    t.string "open_time"
     t.index ["restaurant_id"], name: "index_business_hours_on_restaurant_id"
   end
 
@@ -58,7 +59,6 @@ ActiveRecord::Schema.define(version: 2018_11_29_140224) do
     t.string "cuisine"
     t.time "deal_hours"
     t.string "phone_number"
-    t.string "price_category"
     t.string "location"
     t.integer "coordinates"
     t.string "website_url"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 2018_11_29_140224) do
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
+    t.integer "rating"
+    t.integer "zip_code"
+    t.integer "price_category"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
@@ -83,6 +86,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_140224) do
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "text"
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 

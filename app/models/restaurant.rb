@@ -8,7 +8,7 @@ class Restaurant < ApplicationRecord
 
   # validates :cuisine, inclusion: ["amerikanisch", "französisch", "asiatisch", "burger", "dessert", "deutsche küche", "fisch", "gesund", "exklusive deals", "indisch", "italienisch", "japanisch", "koreanisch", "mediterranean", "mexikanisch", "pizza", "sandwiches", "sushi", "syrisch", "thailändisch", "türkisch", "vegetarisch", "vietnamesisch", "other"]
 
-  validates :cuisine, inclusion: ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "french", "vietnamese", "eastern european", "burrito"]
+  # validates :cuisine, inclusion: ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "french", "vietnamese", "eastern european", "burrito"]
 
   validates :name, presence: true
   validates :location, presence: true
