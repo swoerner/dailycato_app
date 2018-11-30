@@ -21,6 +21,7 @@ gem 'cloudinary', '1.10.1.pre.rc'
 gem 'carrierwave', '~> 1.2'
 gem "pundit"
 gem "geocoder"
+gem'http'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

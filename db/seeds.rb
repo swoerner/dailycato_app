@@ -1,4 +1,9 @@
 require 'http'
+BusinessHour.destroy_all
+Deal.destroy_all
+Restaurant.destroy_all
+User.destroy_all
+USER = User.create!(email: "tim.raue@web.de", password: "123123", first_name: "Tim", last_name: "Raue")
 API_KEY = ENV["YELP_API"]
 
 # Constants, do not change these
@@ -10,10 +15,10 @@ BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business i
 DEFAULT_BUSINESS_ID = "yelp-san-francisco"
 DEFAULT_TERM = "dinner"
 DEFAULT_LOCATION = "San Francisco, CA"
-SEARCH_LIMIT = 10
+SEARCH_LIMIT = 50
 
 
-def search(term, location)
+def search(term, location) # for ids
   url = "#{API_HOST}#{SEARCH_PATH}"
   params = {
     term: term,
@@ -23,19 +28,48 @@ def search(term, location)
 
   response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
   response.parse
-end
-#
-results = search('asian', 'berlin')
+  array_of_ids = []
 
-results['businesses'].each do |business|
-  puts business["name"]
-  puts business["phone"]
-  puts business["rating"]
-  puts business["is_closed"]
-  puts business["review_count"]
-  puts business["categories"]
-  puts business["price"]
-  puts business["location"]["address1"]
-  puts business["location"]["zip_code"]
-  puts business["image_url"]
+  response.parse["businesses"].each do |business|
+    array_of_ids << business["id"]
+  end
+
+  array_of_ids
 end
+
+def search_restaurants_details(array_of_ids)
+  array_of_ids.each do |id|
+    url = "#{API_HOST}#{BUSINESS_PATH}#{id}"
+
+    response = HTTP.auth("Bearer #{API_KEY}").get(url)
+    response.parse
+    r = Restaurant.create!(
+      name: response.parse["name"],
+      phone_number: response.parse["phone"],
+      rating: response.parse["rating"],
+      user: USER,
+      price_category: response.parse["price"],
+      cuisine: response.parse["categories"][0]["title"],
+      location: response.parse["location"]["address1"],
+      zip_code: response.parse["zip_code"],
+      photo: response.parse["image_url"]
+      )
+    if response.parse["hours"]
+      days = %w(monday tuesday wednesday thursday friday saturday sunday)
+      response.parse["hours"].first['open'].each do |hour|
+        day = days[hour['day']]
+        BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
+      end
+    end
+  end
+end
+
+results = search_restaurants_details(search('', 'berlin'))
+# p results
+
+# Review.create!(
+#   restaurant_id: r.id,
+#   text: business["text"]
+#   )
+
+# )
