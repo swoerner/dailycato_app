@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @restaurant = Restaurant.all
     @restaurant = @restaurant.where(cuisine: params[:cuisine]) if params[:cuisine].present?
@@ -13,7 +13,8 @@ class RestaurantsController < ApplicationController
       {
         lng: restaurant.longitude,
         lat: restaurant.latitude,
-        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) },
+        id: restaurant.id
       }
     end
   end
