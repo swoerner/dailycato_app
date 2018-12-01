@@ -5,4 +5,8 @@ class Deal < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true
+
+  def label
+    self.name + " - " + self.price.to_s + "€"
+  end
 end
