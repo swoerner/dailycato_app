@@ -41,24 +41,17 @@
     </div>
 
     <div class="all-deals">
-      <div class="details-deals">
+     <div class="details-deals">
+      <div class="end-marker">
+        <p><% @restaurant.deals.each  do |d|  %></p>
         <div class="deal-title">
-          <p>Schnitzel </p>
+          <p><strong><%= d.name %></strong></p>
         </div>
         <div class="deal-description-price">
-         <p> mit Jägersauce </p>
-
-         <div class="deal-price"><p> 13€</p></div>
-       </div>
-     </div>
-
-     <div class="details-deals">
-      <div class="deal-title">
-        <p> Lachs </p>
-      </div>
-      <div class="deal-description-price">
-        <p> mit Salat, Mikrokrümmeln und Obst</p>
-        <div class="deal-price"<p>13€</p></div>
+          <p><%= d.description %></p>
+          <div class="deal-price"> <p><%= d.price %>€</p></div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -105,4 +98,3 @@
     </div>
   </div>
 </div>
-

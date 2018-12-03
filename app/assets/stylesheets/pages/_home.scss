@@ -8,6 +8,14 @@
   // align-items: center;
 }
 
+.ap-name {
+  display: none !important;
+}
+
+.ap-suggestion{
+  display: flex;
+}
+
 .advantages-section {
   background-color: #EAE9E9;
   margin-bottom: -20px;
@@ -26,7 +34,7 @@
 }
 
 .advantages-header {
-text-align: center;
+  text-align: center;
 
 }
 
