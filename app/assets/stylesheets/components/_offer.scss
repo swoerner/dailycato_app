@@ -58,13 +58,14 @@ width: 450px;
 }
 .restaurant-offer p {
   font-size: 14px;
+  display: block;
 }
 
 .restaurant-details {
   padding-left: 10px;
-  min-width: 200px;
+  min-width: 150px;
+  max-width: 150px;
   text-align: center;
-
 
  p {
   color: #939191;
@@ -77,7 +78,7 @@ font-size: 20px;
 }
 
 .offer-price {
-  text-align: center;
+  text-align: right;
   padding-right: 20px;
 }
 
