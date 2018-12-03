@@ -170,9 +170,14 @@ justify-content: center;
   margin: 0 20px 0 0;
 }
 
-.restaurant-picture img {
-  height: 100px;
-  width: 75px;
+.restaurant-picture {
+height: 100px;
+width: 100px;
+}
+
+.picture-restaurant {
+  width: 100%;
+  height: 100%;
 }
 
 .all-deals {
