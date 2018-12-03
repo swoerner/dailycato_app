@@ -52,9 +52,10 @@ def search_restaurants_details(array_of_ids)
       cuisine: response.parse["categories"][0]["title"],
       location: response.parse["location"]["address1"],
       zip_code: response.parse["zip_code"],
-      photo: response.parse["image_url"]
-      )
-    if response.parse["hours"]
+      photo: response.parse["image_url"],
+      photos: response.parse["photos"],
+      ),
+    if response.parse["hours"] && r
       days = %w(monday tuesday wednesday thursday friday saturday sunday)
       response.parse["hours"].first['open'].each do |hour|
         day = days[hour['day']]
@@ -69,8 +70,8 @@ results = search_restaurants_details(search('', 'berlin'))
 
 # Review.create!(
 #   restaurant_id: r.id,
-#   text: business["text"]
-#   )
+#   text: business["id"]["text"]
+#   text: response.parse   )
 
 # )
 
