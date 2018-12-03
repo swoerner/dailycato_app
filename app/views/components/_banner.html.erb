@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(30,60,30,0.3) 0%, rgba(30,60,30,0.3) 50%), url('https://foodrevolution.org/wp-content/uploads/2017/12/blog-featured-holiday_-20171215.jpg');">
+<div class="banner" style="background-image: linear-gradient(-120deg, rgba(10,20,10,0.3) 50%, rgba(10,20,10,0.2) 100%), url('https://foodrevolution.org/wp-content/uploads/2017/12/blog-featured-holiday_-20171215.jpg');">
 
   <div class="banner-content">
     <h1 id="first-header">Hungry?</h1> <br>
@@ -9,9 +9,8 @@
     <!-- das Formular bekommt eine Id, das das Plugin dieses aufruft. -->
     <!-- Damit auf der weitergeleiteten Seite die Werte in der URL stehen, braucht es eine name Klasse. -->
 
-    <form action="<%= restaurants_path %>" class="js-autocomplete-form">
-     <!-- <div class="center-spacing"> -->
-      <div class="form-group">
+    <div class="form-group">
+      <form action="<%= restaurants_path %>" class="js-autocomplete-form">
         <input type="text" class="form-control inputfield" value="<%= params[:location] %>" name="location" id="restaurant_location" placeholder="e.g. Berlin">
       </div>
       <div class="form-group banner-spacing">
