@@ -1,8 +1,22 @@
-<h1><%= restaurant.name %></h1>
+<div>
+  <div class="restaurant-logo">
+    <img src="<%= restaurant.photos.first %>" alt="">
+  </div>
+  <h1><%= restaurant.name %></h1>
+  <p><% restaurant.rating.floor.times do %>
+    <i class="fa fa-star checked"></i>
+    <% end %>
+    <% if restaurant.rating.round.even? %>
+    <i class="fas fa-star-half-alt"></i>
+    <% end %>
+    <% (5 - restaurant.rating.floor).times do %>
+    <span class="fa fa-star"></span>
+    <% end %>
 
-<p><%= restaurant.location %></p>
+  </p>
+  <p><%= restaurant.location %></p>
 
-<div class="details-button">
-  <p><%= link_to "See Deals", restaurant_path(restaurant)%></p>
+  <div class="details-button">
+    <p><%= link_to "See Deals", restaurant_path(restaurant)%></p>
+  </div>
 </div>
-
