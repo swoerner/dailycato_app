@@ -75,6 +75,18 @@ justify-content: center;
   margin-top: 25px;
   padding-right: 10px;
   padding-left: 10px;
+
+  th {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  td {
+    padding-right: 10px;
+
+  }
 }
 
 .center-text-left{
@@ -111,7 +123,7 @@ justify-content: center;
   flex-direction: column;
   border: 1px solid #F46036;
   width: 30vw;
-  height: 20vw;
+  height: 22vw;
   padding-right: 10px ;
   padding-left: 10px;
   padding-bottom: 10px;
@@ -368,4 +380,5 @@ table {
 
 .today {
   background-color: #3E9B4D;
+  color: white !important;
 }
