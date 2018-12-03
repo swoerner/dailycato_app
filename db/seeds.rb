@@ -11,7 +11,6 @@ API_HOST = "https://api.yelp.com"
 SEARCH_PATH = "/v3/businesses/search"
 BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
 
-
 DEFAULT_BUSINESS_ID = "yelp-san-francisco"
 DEFAULT_TERM = "dinner"
 DEFAULT_LOCATION = "San Francisco, CA"
@@ -42,32 +41,30 @@ def search_restaurants_details(array_of_ids)
     url = "#{API_HOST}#{BUSINESS_PATH}#{id}"
 
     response = HTTP.auth("Bearer #{API_KEY}").get(url)
-    response.parse
+    price_category = response.parse["price"].length if response.parse["price"]
     r = Restaurant.create!(
       name: response.parse["name"],
       phone_number: response.parse["phone"],
       rating: response.parse["rating"],
       user: USER,
-      price_category: response.parse["price"],
       cuisine: response.parse["categories"][0]["title"],
       location: response.parse["location"]["address1"],
       zip_code: response.parse["zip_code"],
       photo: response.parse["image_url"],
       photos: response.parse["photos"],
-    )
-  #  puts "Restaurant: #{r.name} created!"
-    if response.parse["hours"] && r
-      days = %w(monday tuesday wednesday thursday friday saturday sunday)
-      response.parse["hours"].first['open'].each do |hour|
-        day = days[hour['day']]
-        BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
-      end
-  #    puts "Bursiness Hours for #{r.name} created"
+      price_category: price_category,
+      )
+  if response.parse["hours"] && r
+    days = %w(monday tuesday wednesday thursday friday saturday sunday)
+    response.parse["hours"].first['open'].each do |hour|
+      day = days[hour['day']]
+      BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
     end
-  end
+end
+end
 end
 
-results = search_restaurants_details(search('restaurant', 'berlin'))
+results = search_restaurants_details(search('restaurant', 'Berlin'))
 # p results
 
 # Review.create!(
@@ -75,7 +72,7 @@ results = search_restaurants_details(search('restaurant', 'berlin'))
 #   text: business["id"]["text"]
 #   text: response.parse   )
 
-
+# Restaurant.find_by(name: )
 Deal.create!(name: "Brokkolicremesuppe", description: "mit gerösteten Mandeln und frischen Kräutern", food_type: "modern european" , price: 4, restaurant: Restaurant.first)
 Deal.create!(name: "Vegane Karottensuppe", description: "mit Ingwer, Sojamilch und karamellisierter roter Bete", food_type: "modern european" , price: 6, restaurant: Restaurant.first)
 Deal.create!(name: "Bunte Gemüsesuppe", description: "mit Wiener Würstchen, Croûtons und Petersilie", food_type: "modern european" , price: 5, restaurant: Restaurant.first)
@@ -89,3 +86,28 @@ Deal.create!(name: "Spaghetti Bolognese", description: "mit Fleischbällchen und
 Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
 Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
 Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
+
+
+
+Deal.create!(name: "Businesslunch", description: "Daily changing Lunch Deals", food_type: "russian", price: 3.9 , restaurant: Russtrôt)
+
+Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.3 , restaurant: Steinecke)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage und Butter", food_type: "german", price: 3.95, restaurant: Steinecke)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage, Butter, Käse, Schinken, Tomaten, Zwiebeln und Schnittlauf", food_type: "german", price: 3.95 , restaurant: Steinecke)
+
+Deal.create!(name: "Sushi-Menue-Happy-Hour", description: "All kinds of Sushi", food_type: "japanese", price: , restaurant: ishin)
+
+Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: SuperiBerico)
+Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.5, restaurant: SuperiBerico)
+Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: SuperiBerico)
+Deal.create!(name: "Iberischer Tapas-Teller", description: "mit diversen Käse-Sorten, Marmelade, Obst, Picos oder Brot", food_type: "spanish", price: 8.5, restaurant: SuperiBerico)
+Deal.create!(name: "Bolo de Arroz", description: "Reis-Muffin, zahl 2 und nimm 3", food_type: "spanish", price: 2.6, restaurant: SuperiBerico)
+Deal.create!(name: "Cappucino und ein Stück Torte", description: "", food_type: "spanish", price: 3, restaurant:SuperiBerico)
+
+# Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
+# Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
+# Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
+
+
+Restaurant.create!(name: "Steinecke", description: , category)
+SuperiBerico Russtrôt ishin
