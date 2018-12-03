@@ -49,10 +49,19 @@
   margin: 0 auto;
   padding: 5px 0px;
   text-align: center;
-  text-decoration: none;
   font-size: 20px;
   border: 0 !important;
   font-weight: lighter;
+  opacity: 1;
+  font-weight: 350;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.booking-button:hover{
+  opacity: 1;
+  font-weight: 400;
+  text-decoration: none !important;
 }
 
 .search-index-btn {
@@ -90,20 +99,23 @@ a {
   text-decoration: none;
 }
 
-.filter-button {
+#filter-button {
   background-color: transparent;
-  color: #F46036;
-  border: 1px solid #F46036;
+  color: #3E9B4D;
+  border: 1px solid #3E9B4D;
   text-align: center;
   font-weight: 350;
   font-family: 'Open Sans', sans-serif;
-  padding: 2px 40px 6px;
+  padding: 2px 45px 6px;
   padding-top: 6px;
   border-radius: 8px;
   opacity: 0.7;
+  position: relative;
+  margin-left: 20px;
+
 }
 
-.filter-button:hover {
+#filter-button:hover {
   opacity: 1;
   text-weight: 600;
 }
