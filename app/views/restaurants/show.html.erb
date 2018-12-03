@@ -1,5 +1,4 @@
 <div class="flex-box">
-
   <div class="flex-left">
     <div class="outter-box">
       <div class="restaurant-picture">
@@ -8,20 +7,36 @@
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
         <p><%= @restaurant.location %></p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+        <div>
+          <% 3.5.round.times do %>
+          <i class="fa fa-star checked"></i>
+          <% end %>
+          <% (5 - 3.5.round).times do %>
+          <span class="fa fa-star"></span>
+          <% end %>
+        </div>
+
       </div>
+      <% if true %>
       <div class="category-tag">
         <p>Modern-Asian</p>
       </div>
+      <% end %>
+      <% if false %>
+      <div class="category-tag">
+        <p>another category</p>
+      </div>
+      <% end %>
+      <% if false %>
+      <div class="category-tag">
+        <p>category</p>
+      </div>
+      <% end %>
 
       <div class="contact-display">
-        <a href="tel: 00493025937930"><i class="fas fa-phone-square" style="font-size:30px;"></i></a>
-        <a href="mailto:office@tim-raue.com "><i class="fas fa-envelope-square" style="font-size:30px;"></i></a>
-        <a href="https://tim-raue.com/en/"><i class="fas fa-home" style="font-size:30px;"></i></a>
+        <a href="tel: 00493025937930" target="_blank"> <i class="fas fa-phone-square" style="font-size:30px;"></i></a>
+        <a href="mailto:office@tim-raue.com " target="_blank"><i class="fas fa-envelope-square" style="font-size:30px;"></i></a>
+        <a href="https://tim-raue.com/en/" target="_blank"><i class="fas fa-home" style="font-size:30px;"></i></a>
       </div>
     </div>
 
@@ -45,9 +60,14 @@
         <p> mit Salat, Mikrokrümmeln und Obst</p>
         <div class="deal-price"<p>13€</p></div>
       </div>
-              <%= link_to "Book Now", new_restaurant_booking_path(@restaurant), class: "btn btn-primary"%>
-
     </div>
+  </div>
+  <br>
+  <br>
+
+
+  <div class="booking-section">
+    <%= link_to "Book Now", new_restaurant_booking_path(@restaurant), class: "booking-button" %>
   </div>
 </div>
 
@@ -70,13 +90,13 @@
     <div class="flex-container">
       <h2 class="box-title">Opening Hours</h2>
       <table class="opening-table">
-        <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
-        <tr><th>Sunday</th><td>Closed</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==1 %>"><th>Monday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==2 %>"><th>Tuesday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==3 %>"><th>Wednesday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==4 %>"><th>Thursday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==5 %>"><th>Friday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==6 %>"><th>Saturday</th><td>10:00 - 22:00</td></tr>
+        <tr class="<%= 'today' if Date.today.wday ==7 %>"><th>Sunday</th><td>Closed</td></tr>
       </table>
     </div>
 

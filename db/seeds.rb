@@ -74,3 +74,4 @@ results = search_restaurants_details(search('', 'berlin'))
 #   restaurant_id: r.id,
 #   text: business["id"]["text"]
 #   text: response.parse   )
+
