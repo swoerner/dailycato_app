@@ -29,6 +29,10 @@
     <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
     <div class="restaurant-details">
       <%= cl_image_tag restaurant.photo, height: 60, width: 60, crop: :fill, radius: "max" %>
+
+<img src="<%= restaurant.photos.first %>" alt="">
+
+
       <h3><%= restaurant.name %></h3>
       <p><%= restaurant.location %></p>
       <!-- Der Anfangsbuchstabe jedes Wortes wird groß geschrieben -->
