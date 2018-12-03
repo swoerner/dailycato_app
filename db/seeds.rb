@@ -67,7 +67,7 @@ def search_restaurants_details(array_of_ids)
   end
 end
 
-results = search_restaurants_details(search('', 'berlin'))
+results = search_restaurants_details(search('restaurant', 'berlin'))
 # p results
 
 # Review.create!(
