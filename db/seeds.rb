@@ -54,13 +54,15 @@ def search_restaurants_details(array_of_ids)
       zip_code: response.parse["zip_code"],
       photo: response.parse["image_url"],
       photos: response.parse["photos"],
-      ),
+    )
+  #  puts "Restaurant: #{r.name} created!"
     if response.parse["hours"] && r
       days = %w(monday tuesday wednesday thursday friday saturday sunday)
       response.parse["hours"].first['open'].each do |hour|
         day = days[hour['day']]
         BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
       end
+  #    puts "Bursiness Hours for #{r.name} created"
     end
   end
 end
@@ -72,5 +74,3 @@ results = search_restaurants_details(search('', 'berlin'))
 #   restaurant_id: r.id,
 #   text: business["id"]["text"]
 #   text: response.parse   )
-
-# )
