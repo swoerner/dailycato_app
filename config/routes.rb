@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :restaurants do
     resources :deals
-    resources :bookings, only: [:new, :create]
-    resources :orders, only: [:show, :create] do
+    resources :bookings, only: [:new, :create, :show] do
       resources :payments, only: [:new, :create]
     end
-
-
   end
 end
