@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+#nesting the payments under orders because there wont be payments without an order
   get 'bookings/new'
   get 'bookings/create'
   devise_for :users
@@ -7,5 +7,10 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :deals
     resources :bookings, only: [:new, :create]
+    resources :orders, only: [:show, :create] do
+      resources :payments, only: [:new, :create]
+    end
+
+
   end
 end

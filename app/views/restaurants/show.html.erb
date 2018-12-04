@@ -49,7 +49,8 @@
         </div>
         <div class="deal-description-price">
           <p><%= d.description %></p>
-          <div class="deal-price"> <p><%= d.price %>€</p></div>
+          <div class="deal-price"> <!-- <p><%= d.price %>€</p></div> -->
+          <p>Amount:<%= humanized_money_with_symbol(@d.price) %></p></div>
         </div>
         <% end %>
       </div>
