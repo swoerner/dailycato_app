@@ -89,11 +89,11 @@ results = search_restaurants_details(search('restaurant', 'Berlin'))
 
 
 
-r1 = Restaurant.create!(rating: 4, name: "Russtrôt Café-Bistro", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "russisch", user: USER)
-r2 = Restaurant.create!(rating: 5, name: "Bäckerei Steinecke", location: "Charlottenstraße 16-17, 10117 Berlin", cuisine: "bakery", user: USER)
-r3 = Restaurant.create!(rating: 4.5, name: "Super iBerico", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "spanish", user: USER)
-r4 = Restaurant.create!(rating: 4.5, name: "Ishin", location: "Charlottenstraße 16, 10117 Berlin", cuisine: "japanese", user: USER)
-r5 = Restaurant.create!(rating: 5, name: "Soupkultur", location: "Adresse: Markgrafenstraße 22, 10117 Berlin", cuisine: "suppe", user: USER)
+r1 = Restaurant.create!(rating: 4, name: "Russtrôt Café-Bistro", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "russisch", user: USER, photos: ["https://s3-media1.fl.yelpcdn.com/bphoto/DzHBR_A60NkuLzI0R6cYew/o.jpg", "https://s3-media3.fl.yelpcdn.com/bphoto/Sq9aILOTNHFL3mNsdV-gkg/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/iAbhtIbeEoFFN19rr8Zbiw/o.jpg"])
+r2 = Restaurant.create!(rating: 5, name: "Bäckerei Steinecke", location: "Charlottenstraße 16-17, 10117 Berlin", cuisine: "bakery", user: USER, photos: ["https://s3-media2.fl.yelpcdn.com/bphoto/ZEd5drx2fvTQHYKJNpl9WA/o.jpg", "https://s3-media3.fl.yelpcdn.com/bphoto/Jww432ydtRi8JkkDxZjKPg/o.jpg", "https://s3-media3.fl.yelpcdn.com/bphoto/jzrF6DurY2OjoxWmJa9RVg/o.jpg"])
+r3 = Restaurant.create!(rating: 3.5, name: "Super iBerico", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "spanish", user: USER, photos: ["https://s3-media2.fl.yelpcdn.com/bphoto/fUYDQyRA8WUU3PWF1qcdxg/o.jpg", "https://s3-media1.fl.yelpcdn.com/bphoto/QjW7qy2nagBsmIcebzAlMA/o.jpg", "https://s3-media1.fl.yelpcdn.com/bphoto/vaAKqczIL9ol_B9m3QJxcw/o.jpg"])
+r4 = Restaurant.create!(rating: 4.5, name: "Ishin", location: "Charlottenstraße 16, 10117 Berlin", cuisine: "japanese", user: USER, photos: ["https://s3-media2.fl.yelpcdn.com/bphoto/Zj7S8Z0y969-21BU4uZJvg/o.jpg", "https://s3-media2.fl.yelpcdn.com/bphoto/QeNa_KMQPMlOJ7H_Soy9bw/o.jpg", "https://s3-media3.fl.yelpcdn.com/bphoto/CsAse2i7vafHIKwfZXSl8w/o.jpg"])
+r5 = Restaurant.create!(rating: 3.5, name: "Soupkultur", location: "Adresse: Markgrafenstraße 22, 10117 Berlin", cuisine: "suppe", user: USER, photos: ["https://s3-media1.fl.yelpcdn.com/bphoto/o2bPhG2O3jwkkDAxGSQ72w/o.jpg", "https://s3-media1.fl.yelpcdn.com/bphoto/Ssjytt2u2tdzuYa9_W0XNQ/o.jpg", "https://s3-media1.fl.yelpcdn.com/bphoto/4h7MzltoSM5QbeKIvO-SuA/o.jpg"])
 
 
 Deal.create!(name: "Schnitzel", description: "mit Pommes Frites und Preiselbeeren", food_type: "modern european" , price: 6.50, restaurant: Restaurant.second)
