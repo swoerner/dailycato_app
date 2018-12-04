@@ -45,7 +45,7 @@
   font-weight: 450;
   font-size: 20px !important;
   text-align: center;
-  width: 25vw;
+  width: 24.5vw;
   height: 40px;
   padding: 6px 12px;
   background-color: white;
@@ -62,8 +62,8 @@
 
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 
   p{
     font-size: 18px;
@@ -78,8 +78,20 @@
   right: 190px;
 }
 
-.price-of-deal p{
-  margin-bottom: 5px;
+.price-of-deal {
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    text-align: center;
+  }
+
+
+  p{
+    margin-bottom: 5px;
+  }
 }
 
 .display-price {
@@ -134,12 +146,20 @@
 .booking-time {
   display: flex;
   justify-content: flex-start;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
-.total-price {
-display: flex;
-justify-content: flex-end;
-margin-right: 85px;
-margin-top: 30px;
+.total-price-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 70px;
+  margin-top: 30px;
+}
+
+.checkout-box {
+  margin-right: 70px;
+  margin-top: 0px;
+  padding-left: 670px;
+  display: flex;
+  justify-content: flex-end;
 }
