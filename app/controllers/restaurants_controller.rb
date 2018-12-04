@@ -2,12 +2,9 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @restaurant = Restaurant.all
-    @restaurant = @restaurant.where(cuisine: params[:cuisine]) if params[:cuisine].present?
-    @restaurant = @restaurant.where(distance: params[:distance]) if params[:distance].present?
-    @restaurant = @restaurant.where(price_category: params[:price_category]) if params[:price_category].present?
-    @restaurant = @restaurant.where(food_type: params[:food_type]) if params[:food_type].present?
-    @restaurant = @restaurant.where(type_of_deal: params[:type_of_deal]) if params[:type_of_deal].present?
-
+    @restaurant = @restaurant.where(cuisine: params[:cuisine_types]) if params[:cuisine_types].present?
+    @restaurant = @restaurant.where("price_category <= ?", params[:price_category]) if params[:price_category].present?
+    @restaurant = @restaurant.where("rating >= ?", params[:rating]) if params[:rating].present?
     @restaurants_geo = @restaurant.near(params[:location], 3)
     @markers = @restaurants_geo.map do |restaurant|
       {
