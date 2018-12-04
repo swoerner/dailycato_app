@@ -26,10 +26,27 @@
     <div class="offer-count marker-pin">
       <p><%= restaurant.id %></p>
     </div>
-    <!--  <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo"> -->
     <div class="restaurant-details">
-      <%= cl_image_tag restaurant.photo, height: 60, width: 60, crop: :fill, radius: "max" %>
+
+      <div class="restaurant-logo">
+        <img src="<%= restaurant.photos.first %>" alt="">
+      </div>
+
       <h3><%= restaurant.name %></h3>
+      <p><%= restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+
+      <p><% restaurant.rating.floor.times do %>
+        <i class="fa fa-star checked"></i>
+        <% end %>
+        <% if restaurant.rating.round.even? %>
+        <i class="fas fa-star-half-alt"></i>
+        <% end %>
+        <% (5 - restaurant.rating.floor).times do %>
+        <span class="fa fa-star"></span>
+        <% end %>
+
+      </p>
+
       <p><%= restaurant.location %></p>
       <p><%= restaurant.rating %></p>
 
@@ -37,7 +54,7 @@
       <p><%= restaurant.cuisine.titleize %></p>
     </div>
     <div class="restaurant-offer">
-      <p><% restaurant.deals.each  do |d|  %></p>
+      <p><% restaurant.deals[0..2].each do |d|  %></p>
       <div class="offer-name">
         <div class="flex-text">
           <p><strong><%= d.name %></strong></p>
@@ -48,14 +65,6 @@
         </div>
       </div>
       <% end %>
-    </div>
-
-    <div class="offer-link">
-      <p>
-        <%= link_to restaurant_path(restaurant) do %>
-       <!--  <i class="fas fa-angle-right icon"></i> -->
-        <% end %>
-      </p>
     </div>
   </div>
   <% end %>

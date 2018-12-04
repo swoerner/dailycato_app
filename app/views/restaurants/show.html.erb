@@ -2,7 +2,7 @@
   <div class="flex-left">
     <div class="outter-box">
       <div class="restaurant-picture">
-        <img src="https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/35402_134518579904318_4915185_n.jpg?_nc_cat=109&_nc_ht=scontent-ber1-1.xx&oh=2fb1385029fafad4d74dc346db2dbd92&oe=5CA39A34" alt="Tim-Raue-Logo">
+        <img class= "picture-restaurant" src="<%= @restaurant.photos.first %>">
       </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
@@ -34,31 +34,25 @@
       <% end %>
 
       <div class="contact-display">
-        <a href="tel: 00493025937930" target="_blank"> <i class="fas fa-phone-square" style="font-size:30px;"></i></a>
-        <a href="mailto:office@tim-raue.com " target="_blank"><i class="fas fa-envelope-square" style="font-size:30px;"></i></a>
-        <a href="https://tim-raue.com/en/" target="_blank"><i class="fas fa-home" style="font-size:30px;"></i></a>
+        <a href="tel: <%= @restaurant.phone_number %>" target="_blank"> <i class="fas fa-phone-square" style="font-size:30px;"></i></a>
       </div>
     </div>
 
+
+
+
     <div class="all-deals">
-      <div class="details-deals">
+     <div class="details-deals">
+      <div class="end-marker">
+        <p><% @restaurant.deals.each  do |d|  %></p>
         <div class="deal-title">
-          <p>Schnitzel </p>
+          <p><strong><%= d.name %></strong></p>
         </div>
         <div class="deal-description-price">
-         <p> mit Jägersauce </p>
-
-         <div class="deal-price"><p> 13€</p></div>
-       </div>
-     </div>
-
-     <div class="details-deals">
-      <div class="deal-title">
-        <p> Lachs </p>
-      </div>
-      <div class="deal-description-price">
-        <p> mit Salat, Mikrokrümmeln und Obst</p>
-        <div class="deal-price"<p>13€</p></div>
+          <p><%= d.description %></p>
+          <div class="deal-price"> <p><%= d.price %>€</p></div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -103,6 +97,13 @@
     <div class="flex-container social-media">
       <h2 class="box-title">Reviews</h2>
     </div>
+    <div class="flex-container photos">
+      <h2 class="box-title">Photos</h2>
+      <div class="restaurant-pictures">
+        <img src="<%= @restaurant.photos[0] %>" alt="">
+        <img src="<%= @restaurant.photos[1] %>" alt="">
+        <img src="<%= @restaurant.photos[2] %>" alt="">
+      </div>
+    </div>
   </div>
 </div>
-
