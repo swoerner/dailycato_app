@@ -182,6 +182,7 @@ justify-content: center;
 }
 
 .restaurant-picture {
+
 height: 100px;
 width: 100px;
 }
@@ -377,4 +378,8 @@ table {
 .today {
   background-color: #3E9B4D;
   color: white !important;
+}
+
+.booking-page {
+ min-height: 75vh;
 }
