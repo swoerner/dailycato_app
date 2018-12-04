@@ -20,6 +20,10 @@
   text-decoration: none !important;
 }
 
+a:hover {
+    text-decoration: none !important;
+    color: white;
+  }
 .category-tag {
   border-radius: 6px;
   background-color: #3E9B4D;
@@ -27,6 +31,7 @@
   font-size: 10px;
   height: 20px;
   width: 85px;
+  margin-left: 40px;
   text-align: center;
   vertical-align: middle !important;
   position: relative;
@@ -71,6 +76,7 @@
   border-radius: 8px;
   font-weight: lighter;
   opacity: 0.6;
+  margin-left: 10px;
 }
 
 .search-index-btn:hover {
@@ -111,7 +117,7 @@ a {
   border-radius: 8px;
   opacity: 0.7;
   position: relative;
-  margin-left: 20px;
+  margin-left: 10px;
 
 }
 
