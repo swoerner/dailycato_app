@@ -33,7 +33,7 @@
       </div>
 
       <h3><%= restaurant.name %></h3>
-      <p>250m</p>
+      <p><%= restaurant.distance_to(params[:location],:km).round(2) %> km</p>
 
       <p><% restaurant.rating.floor.times do %>
         <i class="fa fa-star checked"></i>

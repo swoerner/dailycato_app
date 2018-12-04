@@ -29,7 +29,6 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     var el = document.createElement('div');
     el.className = 'marker-pin';
     el.innerText = marker.id;
-    console.log(marker)
     // el.style = "width: 50px; height: 50px; background: red;";
 
     new mapboxgl.Marker(el)
