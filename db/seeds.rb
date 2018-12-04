@@ -49,7 +49,7 @@ def search_restaurants_details(array_of_ids)
       user: USER,
       cuisine: response.parse["categories"][0]["title"],
       location: response.parse["location"]["address1"],
-      zip_code: response.parse["zip_code"],
+      zip_code: response.parse["location"]["zip_code"],
       photo: response.parse["image_url"],
       photos: response.parse["photos"],
       price_category: price_category,
@@ -77,36 +77,36 @@ results = search_restaurants_details(search('restaurant', 'Berlin'))
 
 
 
-Restaurant.create!(name: "Bäckerei Steinecke", address: "Charlottenstraße 16-17, 10117 Berlin", cuisine: "bakery", user: tim)
-Restaurant.create!(name: "Russtrôt Café-Bistro", address: "Zimmerstraße 56, 10117 Berlin", cuisine: "russisch", user: tim)
-Restaurant.create!(name: "Super iBerico", address: "Zimmerstraße 56, 10117 Berlin", cuisine: "spanish", user: tim)
-Restaurant.create!(name: "Ishin", address: "Charlottenstraße 16, 10117 Berlin", cuisine: "japanese", user: tim)
+r1 = Restaurant.create!(name: "Russtrôt Café-Bistro", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "russisch", user: USER)
+r2 = Restaurant.create!(name: "Bäckerei Steinecke", location: "Charlottenstraße 16-17, 10117 Berlin", cuisine: "bakery", user: USER)
+r3 = Restaurant.create!(name: "Super iBerico", location: "Zimmerstraße 56, 10117 Berlin", cuisine: "spanish", user: USER)
+r4 = Restaurant.create!(name: "Ishin", location: "Charlottenstraße 16, 10117 Berlin", cuisine: "japanese", user: USER)
 
-Deal.create!(name: "Brokkolicremesuppe", description: "mit gerösteten Mandeln und frischen Kräutern", food_type: "modern european" , price: 4, restaurant: Restaurant.first)
-Deal.create!(name: "Vegane Karottensuppe", description: "mit Ingwer, Sojamilch und karamellisierter roter Bete", food_type: "modern european" , price: 6, restaurant: Restaurant.first)
-Deal.create!(name: "Bunte Gemüsesuppe", description: "mit Wiener Würstchen, Croûtons und Petersilie", food_type: "modern european" , price: 5, restaurant: Restaurant.first)
-Deal.create!(name: "Buchweizen-Hackfleischtopf", description: "mit Paprika und Koriander", food_type: "modern european" , price: 3, restaurant: Restaurant.first)
+Deal.create!(name: "Brokkolicremesuppe", description: "mit gerösteten Mandeln und frischen Kräutern", food_type: "modern european" , price: 3.50, restaurant: Restaurant.first)
+Deal.create!(name: "Vegane Karottensuppe", description: "mit Ingwer, Sojamilch und karamellisierter roter Bete", food_type: "modern european" , price: 3.50, restaurant: Restaurant.first)
+Deal.create!(name: "Bunte Gemüsesuppe", description: "mit Wiener Würstchen, Croûtons und Petersilie", food_type: "modern european" , price: 4.50, restaurant: Restaurant.first)
+Deal.create!(name: "Buchweizen-Hackfleischtopf", description: "mit Paprika und Koriander", food_type: "modern european" , price: 4.00, restaurant: Restaurant.first)
 Deal.create!(name: "Thailändische grüne Currysuppe", description: "mit geflügelstreifen, asiatischem Gemüse und Koriander", food_type: "modern european" , price: 4, restaurant: Restaurant.first)
-Deal.create!(name: "Schnitzel", description: "mit Pommes Frites und Preiselbeeren", food_type: "modern european" , price: 5, restaurant: Restaurant.second)
-Deal.create!(name: "Jägerschnitzel", description: "in Pilzrahmsauce und Kroketten", food_type: "modern european" , price: 5, restaurant: Restaurant.second)
-Deal.create!(name: "Zigeunerschnitzel", description: "mit Pommes Frites", food_type: "modern european" , price: 5, restaurant: Restaurant.second)
-Deal.create!(name: "Spaghetti Carbonara", description: "mit Speck in Käsesahnesauce", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
-Deal.create!(name: "Spaghetti Bolognese", description: "mit Fleischbällchen und Tomatensauce", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
-Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
-Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
-Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
+Deal.create!(name: "Schnitzel", description: "mit Pommes Frites und Preiselbeeren", food_type: "modern european" , price: 6.50, restaurant: Restaurant.second)
+Deal.create!(name: "Jägerschnitzel", description: "in Pilzrahmsauce und Kroketten", food_type: "modern european" , price: 6.50, restaurant: Restaurant.second)
+Deal.create!(name: "Zigeunerschnitzel", description: "mit Pommes Frites", food_type: "modern european" , price: 6.50, restaurant: Restaurant.second)
+Deal.create!(name: "Spaghetti Carbonara", description: "mit Speck in Käsesahnesauce", food_type: "modern european" , price: 4.00, restaurant: Restaurant.third)
+Deal.create!(name: "Spaghetti Bolognese", description: "mit Fleischbällchen und Tomatensauce", food_type: "modern european" , price: 4.50, restaurant: Restaurant.third)
+Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_type: "modern european" , price: 4.00, restaurant: Restaurant.third)
+Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "modern european" , price: 4.00, restaurant: Restaurant.third)
+Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "modern european", price: 4.00, restaurant: Restaurant.third)
 
-Deal.create!(name: "Businesslunch", description: "Daily changing Lunch Deals", food_type: "russian", price: 3.9 , restaurant: Russtrôt Café-Bistro)
-Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.3 , restaurant: Bäckerei Steinecke)
-Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage und Butter", food_type: "german", price: 3.95, restaurant: Bäckerei Steinecke)
-Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage, Butter, Käse, Schinken, Tomaten, Zwiebeln und Schnittlauf", food_type: "german", price: 3.95 , restaurant: Bäckerei Steinecke)
-Deal.create!(name: "Sushi-Menue-Happy-Hour", description: "All kinds of Sushi", food_type: "japanese", price: , restaurant: ishin)
-Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: SuperiBerico)
-Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.5, restaurant: SuperiBerico)
-Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: SuperiBerico)
-Deal.create!(name: "Iberischer Tapas-Teller", description: "mit diversen Käse-Sorten, Marmelade, Obst, Picos oder Brot", food_type: "spanish", price: 8.5, restaurant: SuperiBerico)
-Deal.create!(name: "Bolo de Arroz", description: "Reis-Muffin, zahl 2 und nimm 3", food_type: "spanish", price: 2.6, restaurant: SuperiBerico)
-Deal.create!(name: "Cappucino und ein Stück Torte", description: "", food_type: "spanish", price: 3, restaurant:SuperiBerico)
+Deal.create!(name: "Businesslunch", description: "Daily changing Lunch Deals", food_type: "russian", price: 3.90, restaurant: r1)
+Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.30, restaurant: r2)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage und Butter", food_type: "german", price: 3.95, restaurant: r2)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage, Butter, Käse, Schinken, Tomaten, Zwiebeln und Schnittlauf", food_type: "german", price: 3.95 , restaurant: r2)
+Deal.create!(name: "Sushi-Menue-Happy-Hour", description: "All kinds of Sushi", food_type: "japanese", price: 4.50, restaurant: r4)
+Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: r3)
+Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
+Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
+Deal.create!(name: "Iberischer Tapas-Teller", description: "mit diversen Käse-Sorten, Marmelade, Obst, Picos oder Brot", food_type: "spanish", price: 8.50, restaurant: r3)
+Deal.create!(name: "Bolo de Arroz", description: "Reis-Muffin, zahl 2 und nimm 3", food_type: "spanish", price: 2.60, restaurant: r3)
+Deal.create!(name: "Kaffeezeit", description: "Cappucino und ein Stück Torte", food_type: "spanish", price: 3.00, restaurant:r3)
 
 # Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
 # Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
