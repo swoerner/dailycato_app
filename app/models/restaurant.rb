@@ -2,6 +2,9 @@ class Restaurant < ApplicationRecord
   belongs_to :user
   has_many :deals
   has_many :reviews, dependent: :destroy
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :user, presence: true
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
@@ -10,8 +13,5 @@ class Restaurant < ApplicationRecord
 
   # validates :cuisine, inclusion: ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "french", "vietnamese", "eastern european", "burrito"]
 
-  validates :name, presence: true
-  validates :location, presence: true
-  validates :user, presence: true
   mount_uploader :photo, PhotoUploader
 end
