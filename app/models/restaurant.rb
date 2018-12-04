@@ -14,4 +14,8 @@ class Restaurant < ApplicationRecord
   validates :location, presence: true
   validates :user, presence: true
   mount_uploader :photo, PhotoUploader
+
+  def self.cuisine_types
+    pluck(:cuisine).uniq
+  end
 end
