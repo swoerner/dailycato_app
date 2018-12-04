@@ -81,12 +81,86 @@
     transition: all ease 1s;
 
 
+
   }
   .filterisopen {
-    height: 38vh;
-    // border: 1px solid gray;
-    // border-style: thin;
+    height: 100%;
+    padding: 20px;
     opacity:1;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
-    }
+  }
 
+
+  .star-ratings {
+   display: flex;
+   font-size: 33px;
+   color: lightgrey;
+
+ }
+
+ .star-btn {
+  input {
+    display: none;
+  }
+  &.active {
+   color: #ff7233;
+ }
+}
+.cuisine-selection {
+  label {
+    font-weight: lighter;
+  }
+}
+
+.star_input {
+  display: none;
+  &:checked {
+    color: red;
+  }
+}
+
+.cost-ratigs {
+  display: flex;
+  input {
+    display: none;
+  }
+  .money-btn {
+    margin-bottom: 10px;
+    background-color: #eeeeee;
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+    width: 25%;
+    padding: 6px;
+    &.active {
+     background-color: #ff7233;
+   }
+ }
+}
+.cuisine-btn {
+  display: flex;
+  label {
+    display: none;
+  }
+}
+.filter-title {
+ p {
+  font-size: 20px;
+  font-weight: 350px;
+  margin-left: 0px;
+  font-weight: bold;
+}
+}
+
+.filter-submit-btn {
+  input {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ff7233;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  }
+}
