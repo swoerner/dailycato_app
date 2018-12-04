@@ -49,7 +49,7 @@ def search_restaurants_details(array_of_ids)
       user: USER,
       cuisine: response.parse["categories"][0]["title"],
       location: response.parse["location"]["address1"],
-      zip_code: response.parse["zip_code"],
+      zip_code: response.parse["location"]["zip_code"],
       photo: response.parse["image_url"],
       photos: response.parse["photos"],
       price_category: price_category,
