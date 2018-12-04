@@ -54,14 +54,14 @@ def search_restaurants_details(array_of_ids)
       photos: response.parse["photos"],
       price_category: price_category,
       )
-  if response.parse["hours"] && r
-    days = %w(monday tuesday wednesday thursday friday saturday sunday)
-    response.parse["hours"].first['open'].each do |hour|
-      day = days[hour['day']]
-      BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
+    if response.parse["hours"] && r
+      days = %w(monday tuesday wednesday thursday friday saturday sunday)
+      response.parse["hours"].first['open'].each do |hour|
+        day = days[hour['day']]
+        BusinessHour.create!(closed_time: hour['end'], open_time: hour['start'], restaurant: r, day: day)
+      end
     end
-end
-end
+  end
 end
 
 results = search_restaurants_details(search('restaurant', 'Berlin'))
@@ -73,6 +73,14 @@ results = search_restaurants_details(search('restaurant', 'Berlin'))
 #   text: response.parse   )
 
 # Restaurant.find_by(name: )
+
+
+
+Restaurant.create!(name: "Bäckerei Steinecke", address: "Charlottenstraße 16-17, 10117 Berlin", cuisine: "bakery", user: tim)
+Restaurant.create!(name: "Russtrôt Café-Bistro", address: "Zimmerstraße 56, 10117 Berlin", cuisine: "russisch", user: tim)
+Restaurant.create!(name: "Super iBerico", address: "Zimmerstraße 56, 10117 Berlin", cuisine: "spanish", user: tim)
+Restaurant.create!(name: "Ishin", address: "Charlottenstraße 16, 10117 Berlin", cuisine: "japanese", user: tim)
+
 Deal.create!(name: "Brokkolicremesuppe", description: "mit gerösteten Mandeln und frischen Kräutern", food_type: "modern european" , price: 4, restaurant: Restaurant.first)
 Deal.create!(name: "Vegane Karottensuppe", description: "mit Ingwer, Sojamilch und karamellisierter roter Bete", food_type: "modern european" , price: 6, restaurant: Restaurant.first)
 Deal.create!(name: "Bunte Gemüsesuppe", description: "mit Wiener Würstchen, Croûtons und Petersilie", food_type: "modern european" , price: 5, restaurant: Restaurant.first)
@@ -87,16 +95,11 @@ Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_
 Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
 Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "modern european" , price: 4, restaurant: Restaurant.third)
 
-
-
-Deal.create!(name: "Businesslunch", description: "Daily changing Lunch Deals", food_type: "russian", price: 3.9 , restaurant: Russtrôt)
-
-Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.3 , restaurant: Steinecke)
-Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage und Butter", food_type: "german", price: 3.95, restaurant: Steinecke)
-Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage, Butter, Käse, Schinken, Tomaten, Zwiebeln und Schnittlauf", food_type: "german", price: 3.95 , restaurant: Steinecke)
-
+Deal.create!(name: "Businesslunch", description: "Daily changing Lunch Deals", food_type: "russian", price: 3.9 , restaurant: Russtrôt Café-Bistro)
+Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.3 , restaurant: Bäckerei Steinecke)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage und Butter", food_type: "german", price: 3.95, restaurant: Bäckerei Steinecke)
+Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen, Salatbeilage, Butter, Käse, Schinken, Tomaten, Zwiebeln und Schnittlauf", food_type: "german", price: 3.95 , restaurant: Bäckerei Steinecke)
 Deal.create!(name: "Sushi-Menue-Happy-Hour", description: "All kinds of Sushi", food_type: "japanese", price: , restaurant: ishin)
-
 Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: SuperiBerico)
 Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.5, restaurant: SuperiBerico)
 Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: SuperiBerico)
@@ -108,6 +111,3 @@ Deal.create!(name: "Cappucino und ein Stück Torte", description: "", food_type:
 # Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
 # Deal.create!(name: "", description: "", food_type: "", price: , restaurant:)
 
-
-Restaurant.create!(name: "Steinecke", description: , category)
-SuperiBerico Russtrôt ishin
