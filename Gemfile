@@ -7,7 +7,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
-
+gem 'money-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -21,7 +21,8 @@ gem 'cloudinary', '1.10.1.pre.rc'
 gem 'carrierwave', '~> 1.2'
 gem "pundit"
 gem "geocoder"
-gem'http'
+gem 'http'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
