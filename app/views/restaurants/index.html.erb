@@ -29,7 +29,14 @@
     <div class="restaurant-details">
 
       <div class="restaurant-logo">
+        <% if restaurant.photos %>
         <img src="<%= restaurant.photos.first %>" alt="">
+        <% else  %>
+        <!-- # Default Bild einfuegen -->
+        <img src="" alt="">
+
+        <% end %>
+
       </div>
 
       <h3><%= restaurant.name %></h3>
@@ -37,6 +44,7 @@
       <p><%= restaurant.distance_to(params[:location],:km).round(2) %> km</p>
       <% end %>
 
+      <% if restaurant.rating %>
       <p><% restaurant.rating.floor.times do %>
         <i class="fa fa-star checked"></i>
         <% end %>
@@ -45,6 +53,7 @@
         <% end %>
         <% (5 - restaurant.rating.floor).times do %>
         <span class="fa fa-star"></span>
+        <% end %>
         <% end %>
 
       </p>

@@ -2,7 +2,9 @@
   <div class="flex-left">
     <div class="outter-box">
       <div class="restaurant-picture">
+        <% if @restaurant.photos %>
         <img class= "picture-restaurant" src="<%= @restaurant.photos.first %>">
+        <% end %>
       </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
@@ -43,19 +45,17 @@
 
 
 
-
-      <div class="all-deals">
-       <div class="details-deals">
-        <div class="end-marker">
-          <p><% @restaurant.deals.each  do |d|  %></p>
-          <div class="deal-title">
-            <p><strong><%= d.name %></strong></p>
-          </div>
-          <div class="deal-description-price">
-            <p><%= d.description %></p>
-            <div class="deal-price"> <p><%= d.price %>€</p></div>
-          </div>
-          <% end %>
+    <div class="all-deals">
+     <div class="details-deals">
+      <div class="end-marker">
+        <p><% @restaurant.deals.each  do |d|  %></p>
+        <div class="deal-title">
+          <p><strong><%= d.name %></strong></p>
+        </div>
+        <div class="deal-description-price">
+          <p><%= d.description %></p>
+          <div class="deal-price"> <!-- <p><%= d.price %>€</p></div> -->
+          <p><%= humanized_money_with_symbol(d.price) %></p></div>
         </div>
       </div>
     </div>
@@ -96,7 +96,6 @@
         </table>
       </div>
 
-
       <div class="flex-container-reviews">
         <h2 class="box-title">Reviews</h2>
         <% @restaurant.reviews.each  do |review|  %>
@@ -120,6 +119,7 @@
      <!--  <div class="flex-container photos">
         <h2 class="box-title">Photos</h2>
         <div class="restaurant-pictures">
+<% if @restaurant.photos && @restaurant.photos.first && @restaurant.photos[1] && @restaurant.photos[2] %>
           <img src="<%= @restaurant.photos[0] %>" alt="">
           <img src="<%= @restaurant.photos[1] %>" alt="">
           <img src="<%= @restaurant.photos[2] %>" alt="">
