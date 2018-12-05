@@ -1,19 +1,25 @@
  <div class="filter-title">
-  <p>Find Per Rated</p>
+  <p>Cuisines</p>
 </div>
 <div class="cuisine-selection">
   <%= form_tag restaurants_path, :method => :get do %>
   <% Restaurant.cuisine_types.each do |cuisine| %>
-
+<div class="cuisine-btn">
   <%= check_box_tag "cuisine_types[]", cuisine, nil, id: "cuisine_#{cuisine.parameterize}" %>
 
+
+  <label class="checkcontainer">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+  </label>
   <%= label_tag "cuisine_#{cuisine.parameterize}", cuisine %>
+  </div>
   <% end %>
 </div>
 
 
 <div class="filter-title">
-  <p>Find Per Rated</p>
+  <p>Rating</p>
 </div>
 
 <div class="star-ratings">
@@ -27,7 +33,7 @@
 
 
 <div class="filter-title">
-  <p>Find Per Rated</p>
+  <p>Budgets</p>
 </div>
 <div class="cost-ratigs">
   <% (1..4).to_a.each do |num| %>
@@ -44,5 +50,19 @@
 </div>
   <% end %>
 
+<script>
+  fakeinputs = document.querySelectorAll(".checkcontainer")
 
+  fakeinputs.forEach(function(fakeinput){
+
+    fakeinput.addEventListener("click", function(){
+      check = fakeinput.previousElementSibling
+
+        check.checked = true
+
+
+    })
+  })
+
+</script>
 
