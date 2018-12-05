@@ -22,6 +22,10 @@
  }
 }
 
+.amount {
+  margin-bottom: 20px;
+}
+
 .amount-of-deals {
   width: 25vw;
   height: 39px;
@@ -54,6 +58,7 @@
 
   h1 {
     font-size: 22px;
+    color: black;
   }
 
   p {
@@ -193,11 +198,5 @@ hr {
   margin-top: 30px;
 }
 
-.checkout-box {
-  // padding-left: 670px;
-  margin: auto;
-  padding: 8px 12px;
-  color: white;
-  // display: flex;
-  // justify-content: flex-end;
-}
+
+
