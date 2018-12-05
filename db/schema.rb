@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_084541) do
+ActiveRecord::Schema.define(version: 2018_12_05_104724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "booking_type"
-    t.time "booking_time"
     t.bigint "user_id"
     t.bigint "restaurant_id"
     t.bigint "deal_id"
@@ -26,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_12_05_084541) do
     t.string "payment_state"
     t.jsonb "payment"
     t.integer "price_cents", default: 0, null: false
+    t.integer "amount"
+    t.datetime "booking_time"
     t.index ["deal_id"], name: "index_bookings_on_deal_id"
     t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"

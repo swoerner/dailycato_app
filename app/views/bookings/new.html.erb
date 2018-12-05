@@ -14,14 +14,7 @@
         <%= b.association :deal, collection: @restaurant.deals, value: "1" %>
       </div>
       <div>
-        <p> Amount </p>
-        <select class="amount-of-deals" id="amount">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <%= b.input :amount, collection: 1..5, input_html: {class: "amount-of-deals", id: "amount"} %>
       </div>
       <div class="price-of-deal">
         <p> Price </p>
