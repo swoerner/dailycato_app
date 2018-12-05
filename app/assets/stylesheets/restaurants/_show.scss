@@ -4,6 +4,29 @@ table {
   padding-right: 20px;
 }
 
+.left-box {
+  border: 3px solid #FF6300;
+  background-size: cover !important;
+  height: 229px;
+  width: 191px;
+
+  img {
+    opacity: 0.2
+  }
+}
+
+.deals-header {
+  border-bottom: 1px solid #868484;
+  padding-top: 10px;
+}
+
+
+.restaurant-picture-box img{
+  background-size: cover !important;
+  height: 229px;
+  width: 191px;
+}
+
 
 th {
   text-align: left;
@@ -266,7 +289,7 @@ justify-content: center;
   }
 
   .offer-location-search {
-    background: #f4f4f4 !important;
+    background: white !important;
   }
 
   .checked {
