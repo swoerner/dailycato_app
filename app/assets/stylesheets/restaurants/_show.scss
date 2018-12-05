@@ -46,15 +46,18 @@ justify-content: center;
   opacity: 1;
 }
 
-.booking-setion {
+.booking-section {
  margin-top: 20px !important;
- padding-top: 20px;
+    /* padding-top: 20px; */
+    background-color: #3E9B4D;
+    margin-bottom: 50px;
+    width: 151px;
+    align-items: center;
+    display: flex;
 
- a {
-  margin-top: 20px !important;
-  padding-top: 20px;
-}
-}
+  }
+
+
 
 .contact-table{
   margin-top: 45px;
@@ -112,7 +115,7 @@ justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #F46036;
+  // border: 1px solid #F46036;
   width: 30vw;
   height: 22vw;
   padding-right: 10px ;
@@ -122,6 +125,8 @@ justify-content: center;
   float: right;
   margin-bottom: 15px;
   margin-right: 0px;
+  border-bottom: 1px solid;
+  border-color: lightgrey;
 }
 
 .flex-container-all-boxes {
@@ -136,17 +141,17 @@ justify-content: center;
 }
 
 .details-restaurant {
-  margin-left: 40px;
+  margin-left: 120px;
 
   h1 {
-    font-size: 30px;
-    font-weight: 350;
-    margin-top: 0px;
+    font-size: 39px;
+    font-weight: 500;
+    margin-top: 5px;
     padding-top: 0px;
   }
 
   p {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 300;
   }
 }
@@ -178,13 +183,23 @@ justify-content: center;
 }
 
 .picture-restaurant {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
 }
 
 .all-deals {
  margin-right: 20px;
  width: 100%;
+
+ h2 {
+  font-size: 20px;
+  color: #FF7234;
+  font-weight: bold;
+}
+
+.deal-price {
+  color: #FF7234;
+}
 }
 
 .details-deals {
@@ -386,7 +401,7 @@ table {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #F46036;
+  // border: 1px solid #F46036;
   width: 30vw;
   height: 22vw;
   padding-right: 10px ;
@@ -397,6 +412,8 @@ table {
   margin-bottom: 15px;
   margin-right: 0px;
   font-size: 13px;
+  border-bottom: 1px solid;
+  border-color: lightgrey;
 }
 
 .review-text {
