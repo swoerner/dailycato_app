@@ -14,4 +14,8 @@ class Restaurant < ApplicationRecord
   # validates :cuisine, inclusion: ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "french", "vietnamese", "eastern european", "burrito"]
 
   mount_uploader :photo, PhotoUploader
+
+  def self.cuisine_types
+    pluck(:cuisine).uniq
+  end
 end
