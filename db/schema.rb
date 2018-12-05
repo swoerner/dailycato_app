@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 2018_12_05_104724) do
     t.bigint "user_id"
     t.bigint "restaurant_id"
     t.bigint "deal_id"
+    t.integer "amount_cents", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "payment_state"
     t.jsonb "payment"
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_cents"
     t.integer "amount"
     t.datetime "booking_time"
     t.index ["deal_id"], name: "index_bookings_on_deal_id"

@@ -7,6 +7,8 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :restaurant, foreign_key: true
       t.references :deal, foreign_key: true
       t.monetize :amount, currency: { present: false }
+      t.monetize :price, currency: { present: false }
+
 
       t.timestamps
     end
