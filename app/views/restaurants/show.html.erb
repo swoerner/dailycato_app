@@ -116,17 +116,31 @@
       </div>
       <% end %>
     </div>
-
-
-    <div class="flex-container photos">
-      <h2 class="box-title">Photos</h2>
-      <div class="restaurant-pictures">
+        <div>
+          <%= review.name %> - <% review.rating.floor.times do %>
+            <i class="fa fa-star checked"></i>
+            <% end %>
+            <% if review.rating.round.even? %>
+            <i class="fas fa-star-half-alt"></i>
+            <% end %>
+            <% (5 - review.rating.floor).times do %>
+            <span class="fa fa-star"></span>
+            <% end %>
+          </div>
+          <div class="review-text">
+            <%= review.text %>
+          </div>
+          <% end %>
+        </div>
+     <div class="flex-container photos">
+        <h2 class="box-title">Photos</h2>
+        <div class="restaurant-pictures">
         <% if @restaurant.photos && @restaurant.photos.first && @restaurant.photos[1] && @restaurant.photos[2] %>
-        <img src="<%= @restaurant.photos[0] %>" alt="">
-        <img src="<%= @restaurant.photos[1] %>" alt="">
-        <img src="<%= @restaurant.photos[2] %>" alt="">
+          <img src="<%= @restaurant.photos[0] %>" alt="">
+          <img src="<%= @restaurant.photos[1] %>" alt="">
+          <img src="<%= @restaurant.photos[2] %>" alt="">
+        </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
