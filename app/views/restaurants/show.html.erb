@@ -84,16 +84,14 @@
     <div class="flex-container">
       <h2 class="box-title">Opening Hours</h2>
       <table class="opening-table">
-        <tr class="<%= 'today' if Date.today.wday ==1 %>"><th>Monday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==2 %>"><th>Tuesday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==3 %>"><th>Wednesday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==4 %>"><th>Thursday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==5 %>"><th>Friday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==6 %>"><th>Saturday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==7 %>"><th>Sunday</th><td>Closed</td></tr>
+        <% counter =  1 %>
+    <% @restaurant_opening_hours.each do |daily|%>
+
+        <tr class="<%= 'today' if Date.today.wday == counter %>"><th><%= daily.day.capitalize! %></th><td><%= daily.open_time %> - <%= daily.closed_time %></td></tr>
+        <% counter += 1 %>
+    <% end %>
       </table>
     </div>
-
 
 
     <div class="flex-container social-media">
