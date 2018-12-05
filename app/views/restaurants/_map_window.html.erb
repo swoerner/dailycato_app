@@ -1,8 +1,11 @@
 <div>
   <div class="restaurant-logo">
+    <% if restaurant.photos %>
     <img src="<%= restaurant.photos.first %>" alt="">
+    <% end %>
   </div>
   <h1><%= restaurant.name %></h1>
+  <% if restaurant.rating %>
   <p><% restaurant.rating.floor.times do %>
     <i class="fa fa-star checked"></i>
     <% end %>
@@ -11,6 +14,7 @@
     <% end %>
     <% (5 - restaurant.rating.floor).times do %>
     <span class="fa fa-star"></span>
+    <% end %>
     <% end %>
 
   </p>

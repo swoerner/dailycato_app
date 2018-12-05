@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :restaurants, dependent: :destroy
   has_many :deals, through: :bookings
   has_many :bookings
+  has_many :orders
 end

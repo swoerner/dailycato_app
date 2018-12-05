@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="container">
+
+
+<% if @booking.payment_state == 'pending' %>
+<h1>Your Booking for <%= @restaurant.name %></h1>
+<p>TEST</p>
+<h2> <%= @booking.amount %>x<%= @booking.deal_id %></h2>
+  <%= form_tag restaurant_booking_payments_path(@restaurant, @booking) do %>
+    <article>
+      <label class="amount">
+        <span>Amount: <%= humanized_money_with_symbol(@booking.price) %></span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Booking"
+      data-email="<%= current_user.email %>"
+      data-amount="<%= @booking.price_cents %>"
+      data-currency="<%= @booking.price.currency %>"></script>
+
+  <% end %>
+
+</div>
+</div>
+<% else %>
+
+<h1>Thanks, see you <%= @booking.booking_time.strftime('%e. %B %Y %m:%M') %>!</h1>
+
+<% end %>

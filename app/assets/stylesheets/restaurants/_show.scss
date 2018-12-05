@@ -230,91 +230,91 @@ justify-content: center;
     height: 38vh;
     opacity:1
   }
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      margin: 0;
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .map {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .filteropen {
+    height: 100%;
+    cursor: pointer;
+
+  }
+  .algolia-places {
+    width: auto !important;
+  }
+  .index-search {
+    display: flex !important;
+  }
+
+  .booking-field {
+    padding-top: 90px;
+    text-align: center;
+  }
+
+  .booking_booking_time {
+    width: 309px;
+
+  }
+
+  .offer-location-search {
+    background: #f4f4f4 !important;
+  }
+
+  .checked {
+    color: orange;
+  }
+
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    .flex-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .flex-container {
+      width: 90vw;
+      height: 30vh;
+      padding-right: 5px ;
+      padding-left: 5px;
+      padding-top: 0px;
+      margin-bottom: 15px;
+      margin-right: 0px;
     }
 
-    .map {
-      padding-bottom: 10px;
-      padding-top: 10px;
-    }
-    .filteropen {
-      height: 100%;
-      cursor: pointer;
+    table {
+      width: 70vw;
 
-    }
-    .algolia-places {
-      width: auto !important;
-    }
-    .index-search {
-      display: flex !important;
-    }
-
-    .booking-field {
-      padding-top: 90px;
-      text-align: center;
-    }
-
-    .booking_booking_time {
-      width: 309px;
-
-    }
-
-    .offer-location-search {
-      background: #f4f4f4 !important;
-    }
-
-    .checked {
-      color: orange;
-    }
-
-
-    @media (min-width: 481px) and (max-width: 767px) {
-      .flex-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      th, td{
+        font-size: 14px;
       }
-      .flex-container {
-        width: 90vw;
-        height: 30vh;
-        padding-right: 5px ;
-        padding-left: 5px;
-        padding-top: 0px;
-        margin-bottom: 15px;
-        margin-right: 0px;
-      }
-
-      table {
-        width: 70vw;
-
-        th, td{
-          font-size: 14px;
-        }
-      }
-
-      .deal-price {
-        margin-right: 0px;
-      }
-
-      .all-deals {
-       margin-right: 0px;
-       width: 100%;
-     }
-
-     .details-deals {
-      width: 320px;
     }
 
-    .outter-box {
-     width: 300px;
+    .deal-price {
+      margin-right: 0px;
+    }
+
+    .all-deals {
+     margin-right: 0px;
+     width: 100%;
    }
 
+   .details-deals {
+    width: 320px;
+  }
+
+  .outter-box {
+   width: 300px;
  }
+
+}
 
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -373,4 +373,31 @@ table {
 
 .booking-page {
  min-height: 75vh;
+}
+
+
+.booking-confirmation {
+min-height: 75vh;
+}
+
+.flex-container-reviews {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #F46036;
+  width: 30vw;
+  height: 22vw;
+  padding-right: 10px ;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  float: right;
+  margin-bottom: 15px;
+  margin-right: 0px;
+  font-size: 13px;
+}
+
+.review-text {
+ margin-bottom: 10px;
 }

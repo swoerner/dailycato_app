@@ -2,7 +2,9 @@
   <div class="flex-left">
     <div class="outter-box">
       <div class="restaurant-picture">
+        <% if @restaurant.photos %>
         <img class= "picture-restaurant" src="<%= @restaurant.photos.first %>">
+        <% end %>
       </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
@@ -50,7 +52,8 @@
         </div>
         <div class="deal-description-price">
           <p><%= d.description %></p>
-          <div class="deal-price"> <p><%= d.price %>€</p></div>
+          <div class="deal-price"> <!-- <p><%= d.price %>€</p></div> -->
+          <p><%= humanized_money_with_symbol(d.price) %></p></div>
         </div>
         <% end %>
       </div>
@@ -84,25 +87,45 @@
     <div class="flex-container">
       <h2 class="box-title">Opening Hours</h2>
       <table class="opening-table">
-        <tr class="<%= 'today' if Date.today.wday ==1 %>"><th>Monday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==2 %>"><th>Tuesday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==3 %>"><th>Wednesday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==4 %>"><th>Thursday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==5 %>"><th>Friday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==6 %>"><th>Saturday</th><td>10:00 - 22:00</td></tr>
-        <tr class="<%= 'today' if Date.today.wday ==7 %>"><th>Sunday</th><td>Closed</td></tr>
+        <% counter =  1 %>
+        <% @restaurant_opening_hours.each do |daily|%>
+
+        <tr class="<%= 'today' if Date.today.wday == counter %>"><th><%= daily.day.capitalize! %></th><td><%= daily.open_time %> - <%= daily.closed_time %></td></tr>
+        <% counter += 1 %>
+        <% end %>
       </table>
     </div>
 
-    <div class="flex-container social-media">
+
+    <div class="flex-container-reviews">
       <h2 class="box-title">Reviews</h2>
+      <% @restaurant.reviews.each do |review|  %>
+      <div>
+        <%= review.name %> - <% review.rating.floor.times do %>
+        <i class="fa fa-star checked"></i>
+        <% end %>
+        <% if review.rating.round.even? %>
+        <i class="fas fa-star-half-alt"></i>
+        <% end %>
+        <% (5 - review.rating.floor).times do %>
+        <span class="fa fa-star"></span>
+        <% end %>
+      </div>
+      <div class="review-text">
+        <%= review.text %>
+      </div>
+      <% end %>
     </div>
+
+
     <div class="flex-container photos">
       <h2 class="box-title">Photos</h2>
       <div class="restaurant-pictures">
+        <% if @restaurant.photos && @restaurant.photos.first && @restaurant.photos[1] && @restaurant.photos[2] %>
         <img src="<%= @restaurant.photos[0] %>" alt="">
         <img src="<%= @restaurant.photos[1] %>" alt="">
         <img src="<%= @restaurant.photos[2] %>" alt="">
+        <% end %>
       </div>
     </div>
   </div>
