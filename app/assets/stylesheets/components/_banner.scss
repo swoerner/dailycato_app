@@ -14,26 +14,27 @@
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
 .banner p {
-     font-size: 26px;
+ font-size: 26px;
     /* font-weight: lighter; */
     color: white;
     /* opacity: 0.7; */
     margin-bottom: 30px;
-}
+  }
 
-.banner-spacing {
-  margin-top: -15px;
-}
+  .banner-spacing {
+    margin-top: -15px;
+  }
 
-.center-spacing {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .center-spacing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.inputfield {
-  width: 30vw;
+  .inputfield {
+    width: 30vw;
   // margin: 8px 0;
   margin: 0 auto;
   padding: 5px 0px;
@@ -46,9 +47,9 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-.inputfield {
-  font-size: 14px;
-}
+  .inputfield {
+    font-size: 14px;
+  }
 
 }
 
@@ -59,21 +60,21 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
 
-.inputfield {
-  font-size: 14px;
- }
+  .inputfield {
+    font-size: 14px;
+  }
 
-.banner {
-  height: 500px;
-}
+  .banner {
+    height: 500px;
+  }
 
-.banner h1 {
-  font-size: 40px;
-}
+  .banner h1 {
+    font-size: 40px;
+  }
 
-.banner p {
-  font-size: 20px;
-}
+  .banner p {
+    font-size: 20px;
+  }
 }
 
 
