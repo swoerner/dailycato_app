@@ -5,7 +5,9 @@ class RestaurantsController < ApplicationController
     @restaurant = @restaurant.where(cuisine: params[:cuisine_types]) if params[:cuisine_types].present?
     @restaurant = @restaurant.where("price_category <= ?", params[:price_category]) if params[:price_category].present?
     @restaurant = @restaurant.where("rating >= ?", params[:rating]) if params[:rating].present?
-    @restaurants_geo = @restaurant.near(params[:location], 3)
+    @restaurants_geo = @restaurant.near(params[:location], 3) if params[:location].present?
+    @restaurants_geo = @restaurant.near(params[:location_form], 3) if params[:location_form].present?
+    @restaurants_geo = @restaurant if @restaurants_geo.nil?
     @markers = @restaurants_geo.map do |restaurant|
       {
         lng: restaurant.longitude,
