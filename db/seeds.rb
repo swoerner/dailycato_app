@@ -16,7 +16,7 @@ REVIEWS = "/reviews"
 DEFAULT_BUSINESS_ID = "yelp-san-francisco"
 DEFAULT_TERM = "dinner"
 DEFAULT_LOCATION = "San Francisco, CA"
-SEARCH_LIMIT = 50
+SEARCH_LIMIT = 15
 
 
 def search(term, location) # for ids
