@@ -28,6 +28,7 @@ class RestaurantsController < ApplicationController
       }
     end
     @restaurant = Restaurant.find(params[:id])
+    @restaurant_opening_hours = BusinessHour.where(restaurant_id: @restaurant.id)
   end
 
   def new

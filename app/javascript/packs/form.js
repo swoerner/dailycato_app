@@ -1,6 +1,6 @@
 a = document.getElementById('booking_deal_id')
 b = document.getElementById('priceselect')
-c = document.getElementById('amount').value
+c = document.getElementById('amount')
 d = document.getElementById('total-price')
 
 a.addEventListener('change', function(){
@@ -8,16 +8,19 @@ a.addEventListener('change', function(){
     if(x.value == a.children[a.selectedIndex].innerHTML){
       x.selected = true
     }
+    calcTotalPrice()
   })
 })
+c.addEventListener('change', function(){
+  calcTotalPrice()
+})
 
-var price = document.getElementById('priceselect')
-var x = document.getElementById('amount').value
-var total_price = document.getElementById('total-price')
 
-function calcTotalPrice(x)
-{
-document.getElementById('total-price').value = price * x;
+function calcTotalPrice(){
+  var price = document.querySelector("#priceselect")[document.querySelector("#priceselect").selectedIndex].innerHTML.replace(/\D+/g, '');
+  var x = document.getElementById('amount').value
+  var total_price = document.getElementById('total-price')
+  document.getElementById('total-price').innerHTML = (price * x) + '€';
 }
 
 
