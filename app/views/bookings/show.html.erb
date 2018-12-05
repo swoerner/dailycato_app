@@ -1,18 +1,17 @@
-<!-- Create a button to go to payments new  -->
-<h1>Purchase of teddy <%= @booking.teddy_sku %></h1>
-<%= form_tag booking_payments_path(@booking) do %>
+
+<h1>Purchase of Booking <%= @booking.id %></h1>
+<%= form_tag new_restaurant_booking_payment_path(@restaurant, @booking) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@booking.amount) %></span>
+      <span>Amount: <%= humanized_money_with_symbol(@booking.price) %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Teddy"
+    data-name="My Booking"
     data-email="<%= current_user.email %>"
-    data-description="Teddy <%= @booking.teddy_sku %>"
-    data-amount="<%= @booking.amount_cents %>"
-    data-currency="<%= @booking.amount.currency %>"></script>
+    data-amount="<%= @booking.price_cents %>"
+    data-currency="<%= @booking.price.currency %>"></script>
 
 <% end %>
