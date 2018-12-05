@@ -8,42 +8,48 @@
       </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
+        <% if @restaurant.distance_to(params[:location],:km) %>
+      <p><%= @restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+      <% end %>
         <p><%= @restaurant.location %></p>
-        <div>
-          <% 3.5.round.times do %>
-          <i class="fa fa-star checked"></i>
-          <% end %>
-          <% (5 - 3.5.round).times do %>
-          <span class="fa fa-star"></span>
-          <% end %>
-        </div>
 
+        <% if @restaurant.rating %>
+      <p><% @restaurant.rating.floor.times do %>
+        <i class="fa fa-star checked"></i>
+        <% end %>
+        <% if @restaurant.rating.round.even? %>
+        <i class="fas fa-star-half-alt"></i>
+        <% end %>
+        <% (5 - @restaurant.rating.floor).times do %>
+        <span class="fa fa-star"></span>
+        <% end %>
+        <% end %>
+      </p>
       </div>
-      <% if true %>
-      <div class="category-tag">
+
+      <%# if true %>
+     <!--  <div class="category-tag">
         <p>Modern-Asian</p>
       </div>
-      <% end %>
-      <% if false %>
+      <%# end %>
+      <%# if false %>
       <div class="category-tag">
         <p>another category</p>
       </div>
-      <% end %>
-      <% if false %>
+      <%# end %>
+      <%# if false %>
       <div class="category-tag">
         <p>category</p>
-      </div>
-      <% end %>
+      </div> -->
+      <%# end %>
 
       <div class="contact-display">
         <a href="tel: <%= @restaurant.phone_number %>" target="_blank"> <i class="fas fa-phone-square" style="font-size:30px;"></i></a>
       </div>
     </div>
 
-
-
-
     <div class="all-deals">
+      <h2>Deals:</h2>
      <div class="details-deals">
       <div class="end-marker">
         <p><% @restaurant.deals.each  do |d|  %></p>

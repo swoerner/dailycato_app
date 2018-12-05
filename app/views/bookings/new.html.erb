@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container form-wrapper">
   <div class="booking-page">
-   <center> <h1>New Booking</h1> </center>
+   <center> <h1>Please select your booking date and your deal </h1> </center>
 
    <%= simple_form_for [@restaurant, @deals, @booking] do |b| %>
 
@@ -31,13 +31,12 @@
 
       <div class="total-price-box">
         <div class="total-sum">
-
           <p> Total: </p>
           <p id="total-price"> € </p>
         </div>
       </div>
       <div class="checkout-box">
-        <%= b.submit "Confirm Booking" , class: "booking-button" %>
+        <%= b.submit "Confirm Booking" , class: "booking-button-orange" %>
       </div>
     </div>
   </div>
