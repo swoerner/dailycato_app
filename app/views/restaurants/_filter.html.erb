@@ -3,9 +3,11 @@
 </div>
 <div class="cuisine-selection">
   <%= form_tag restaurants_path, :method => :get do %>
+  <input type="hidden" class="input-form-index hidden-location-input" value="" name="location_form" id="restaurant_location" placeholder="e.g. Berlin">
   <% Restaurant.cuisine_types.each do |cuisine| %>
 <div class="cuisine-btn">
   <%= check_box_tag "cuisine_types[]", cuisine, nil, id: "cuisine_#{cuisine.parameterize}" %>
+
 
 
   <label class="checkcontainer">
@@ -63,6 +65,8 @@
 
     })
   })
+
+
 
 </script>
 
