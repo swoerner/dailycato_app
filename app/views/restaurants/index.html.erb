@@ -102,7 +102,7 @@ data-mapbox-api-key="<%= ENV['MAP_API'] %>"
   b = document.querySelector('.filtercontainer')
   a.addEventListener('click', function(){
     b.classList.toggle('filterisopen')
-    document.querySelector(".cuisine-selection").classList.toggle("filter_open")
+    document.querySelector(".cuisine-selection").classList.toggle("filter_open_cuisine")
     document.querySelector(".cost-ratings").classList.toggle("filter_open")
     document.querySelector(".star-ratings").classList.toggle("filter_open")
   })
