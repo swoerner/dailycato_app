@@ -42,7 +42,22 @@
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+.success-message {
 
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  color: white;
+}
+.fa-check-circle {
+  margin-top: 100px;
+  font-size: 120px;
+  color: white;
+}
+}
 #display-price {
   width: 21.5vw;
 
