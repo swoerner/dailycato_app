@@ -7,11 +7,12 @@ table {
 .left-box {
   border: 3px solid #FF6300;
   background-size: cover !important;
-  height: 229px;
-  width: 191px;
+  height: 270px;
+  width: 210px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 
   img {
     opacity: 0.2
@@ -90,44 +91,44 @@ justify-content: center;
 
 
 
-.contact-table{
-  margin-top: 45px;
-  font-size: 18px;
-  text-align: left;
-}
+  .contact-table{
+    margin-top: 45px;
+    font-size: 18px;
+    text-align: left;
+  }
 
-.opening-table {
-  margin-top: 25px;
-  padding-right: 10px;
-  padding-left: 10px;
-
-  th {
+  .opening-table {
+    margin-top: 25px;
+    padding-right: 10px;
     padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+
+    th {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
+    td {
+      padding-right: 10px;
+
+    }
   }
 
-  td {
-    padding-right: 10px;
-
+  .center-text-left{
+    width: 20vw;
+    text-align: left;
   }
-}
 
-.center-text-left{
-  width: 20vw;
-  text-align: left;
-}
+  .social-media{
+    height: 20vw !important;
+  }
 
-.social-media{
-  height: 20vw !important;
-}
-
-.flex-box {
-  display: flex;
+  .flex-box {
+    display: flex;
 
 
-  margin: 20px 8% 0 8%;
+    margin: 20px 8% 0 8%;
   // position: absolute
 }
 
