@@ -16,19 +16,15 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: black !important;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
-
-// .wrapper {
-//  height: 100vh;
-// }
 
 #logo {
   font-family: 'Amatic SC', cursive;

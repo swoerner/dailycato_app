@@ -5,28 +5,35 @@ table {
 }
 
 .left-box {
-  border: 3px solid #FF6300;
   background-size: cover !important;
   height: 270px;
-  width: 210px;
+  min-width: 220px;
+  max-width: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
-  img {
-    opacity: 0.2
-  }
 }
 
 .smallerTitle {
   font-size: 10px !important;
 }
 
+.new-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .deals-header {
-  border-bottom: 1px solid #868484;
+  border-bottom: 1px solid #ED6F33;;
   padding-top: 10px;
   margin: 0 0 4.5px !important;
+  color: #ED6F33;
+  padding-bottom: 5px;
+
+  p {
+    margin: 0 0 7px !important;
+  }
 }
 
 
@@ -173,7 +180,7 @@ justify-content: center;
 }
 
 .details-restaurant {
-  margin-left: 120px;
+  margin-left: 80px;
 
   h1 {
     font-size: 39px;
@@ -210,28 +217,33 @@ justify-content: center;
 }
 
 .restaurant-picture {
-  height: 100px;
-  width: 100px;
-}
+  height: 200px;
+    /* width: 200px; */
+    /* object-fit: fill; */
+    flex: 0 0 30%;
+    background-position: fit;
+    background-size: cover;
+    background-position: center;
+  }
 
-.picture-restaurant {
-  width: 100px;
-  height: 100px;
-}
+  .picture-restaurant {
+    width: 100%;
+    height: 100%;
+  }
 
-.all-deals {
- margin-right: 20px;
- width: 100%;
+  .all-deals {
+   margin-right: 20px;
+   width: 100%;
 
- h2 {
-  font-size: 20px;
-  color: #FF7234;
-  font-weight: bold;
-}
+   h2 {
+    font-size: 20px;
+    color: #FF7234;
+    font-weight: bold;
+  }
 
-.deal-price {
-  color: #FF7234;
-}
+  .deal-price {
+    color: #FF7234;
+  }
 }
 
 .details-deals {
@@ -441,7 +453,7 @@ table {
   justify-content: space-between;
   // border: 1px solid #F46036;
   width: 30vw;
-  height: 22vw;
+  height: 25vw;
   padding-right: 10px ;
   padding-left: 10px;
   padding-bottom: 10px;
@@ -449,6 +461,7 @@ table {
   float: right;
   margin-bottom: 15px;
   margin-right: 0px;
+  margin-bottom: 40px;
   font-size: 13px;
   border-bottom: 1px solid;
   border-color: lightgrey;
