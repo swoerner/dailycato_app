@@ -5,7 +5,6 @@ table {
 }
 
 .left-box {
-  border: 3px solid #FF6300;
   background-size: cover !important;
   height: 270px;
   width: 210px;
@@ -19,12 +18,13 @@ table {
 }
 
 .deals-header {
-  border-bottom: 1px solid #868484;
+  border-bottom: 1px solid #ED6F33;;
   padding-top: 10px;
   margin: 0 0 4.5px !important;
+  color: #ED6F33;;
 
   p {
-    margin: 0 0 5px !important;
+    margin: 0 0 7px !important;
   }
 }
 
