@@ -147,8 +147,8 @@ BusinessHour.create!(day: "sunday", closed_time: "10:00", open_time:"16:00", res
 
 
 Deal.create!(name: "Businesslunch", description: "Spinat-Käse-Suppe", food_type: "russian", price: 3.90, restaurant: r1)
-Deal.create!(name: "Businesslunch", description: "Blini gefüllt mit Kürbis-Gemuse-Fullung", food_type: "russian", price: 4.50, restaurant: r1)
-Deal.create!(name: "Businesslunch", description: "Gemischte Salat mit gebratenem Lachs", food_type: "russian", price: 8.50, restaurant: r1)
+Deal.create!(name: "Blinis", description: "gefüllt mit Kürbis-Gemuse-Füllung", food_type: "russian", price: 4.50, restaurant: r1)
+Deal.create!(name: "Gemischter Salat", description: "mit gebratenem Lachs", food_type: "russian", price: 8.50, restaurant: r1)
 
 Deal.create!(name: "Kartoffelsuppe", description: "mit Bockwurstscheiben", food_type: "german", price: 3.30, restaurant: r2)
 Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrischen und Salatbeilage", food_type: "german", price: 3.95, restaurant: r2)
@@ -190,7 +190,7 @@ REVIEWS = "/reviews"
 DEFAULT_BUSINESS_ID = "yelp-san-francisco"
 DEFAULT_TERM = "dinner"
 DEFAULT_LOCATION = "San Francisco, CA"
-SEARCH_LIMIT = 30
+SEARCH_LIMIT = 10
 
 
 def search(term, location) # for ids
