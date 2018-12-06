@@ -108,7 +108,7 @@ Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrisc
 
 Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: r3)
 Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
-Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
+Deal.create!(name: "Tapas-Teller", description: "Gemischter Tapas-Teller mit Serrano, Salami dazu Oliven und Picos", food_type: "spanish", price: 5.50, restaurant: r3)
 Deal.create!(name: "Iberischer Tapas-Teller", description: "mit diversen Käse-Sorten, Marmelade, Obst, Picos oder Brot", food_type: "spanish", price: 8.50, restaurant: r3)
 Deal.create!(name: "Bolo de Arroz", description: "Reis-Muffin, zahl 2 und nimm 3", food_type: "spanish", price: 2.60, restaurant: r3)
 Deal.create!(name: "Kaffeezeit", description: "Cappucino und ein Stück Torte", food_type: "spanish", price: 3.00, restaurant:r3)
@@ -228,14 +228,6 @@ Deal.create!(name: "Zigeunerschnitzel", description: "mit Pommes Frites", food_t
 Deal.create!(name: "Pommes Schranke", description: "Pommes Frites mit Mayonaise und Ketchup", food_type: "schnitzel", price: 6.50, restaurant: Restaurant.where(cuisine: "Schnitzel").sample)
 
 
-Deal.create!(name: "Spaghetti Carbonara", description: "mit Speck in Käsesahnesauce", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
-Deal.create!(name: "Spaghetti Bolognese", description: "mit Fleischbällchen und Tomatensauce", food_type: "italian", price: 4.50, restaurant: Restaurant.where(cuisine: "italian").sample)
-Deal.create!(name: "Spaghetti Caprese", description: "mit Knoblauch und Tomate", food_type: "italian", price: 4.50, restaurant: Restaurant.where(cuisine: "italian").sample)
-Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
-Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
-Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
-
-
 Deal.create!(name: "Sake Menue", description: "7 Nigiri (Salmon) und 6 Maki (Salmon)", food_type: "japanese", price: 9.00, restaurant: Restaurant.where(cuisine: "Japanese").sample)
 Deal.create!(name: "Maguro Menue", description: "7 Nigiri (Tuna) und 6 Maki (Tuna)", food_type: "japanese", price: 12.00, restaurant: Restaurant.where(cuisine: "Japanese").sample)
 Deal.create!(name: "Mix Menue", description: "4 Nigiri (Salmon), 3 Nigiri (Tuna), 3 Maki (Salmon) und 3 Maki (Tuna)", food_type: "japanese", price: 14.50, restaurant: Restaurant.where(cuisine: "Japanese").sample)
@@ -276,3 +268,11 @@ Deal.create!(name: "Chiligarnelen", description: "mit Strauchtomaten und Grapefr
 Deal.create!(name: "Suppe des Tages", description: "wechselndes Angebot", food_type: "barbeque", price: 8.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
 Deal.create!(name: "Spare Ribs", description: "vom Havelländer Apfelschwein mit Barbecuesauce", food_type: "barbeque", price: 16.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
 Deal.create!(name: "Krosser Bauch", description: "vom Thüringer Duroc Schwein (24 Std. gegart) mit Hopfen-Malz-Sauce", food_type: "barbeque", price: 16.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
+
+
+Deal.create!(name: "Spaghetti Carbonara", description: "mit Speck in Käsesahnesauce", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
+Deal.create!(name: "Spaghetti Bolognese", description: "mit Fleischbällchen und Tomatensauce", food_type: "italian", price: 4.50, restaurant: Restaurant.where(cuisine: "italian").sample)
+Deal.create!(name: "Spaghetti Caprese", description: "mit Knoblauch und Tomate", food_type: "italian", price: 4.50, restaurant: Restaurant.where(cuisine: "italian").sample)
+Deal.create!(name: "Pizza Hawaii", description: "mit Schinken und Ananas", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
+Deal.create!(name: "Pizza Frutti de Mare", description: "mit Scampis und Meeresfrüchten", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
+Deal.create!(name: "Pizza Mageritha", description: "mit Käse und Tomatensauce", food_type: "italian", price: 4.00, restaurant: Restaurant.where(cuisine: "italian").sample)
