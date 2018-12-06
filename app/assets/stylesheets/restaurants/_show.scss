@@ -9,15 +9,23 @@ table {
   background-size: cover !important;
   height: 229px;
   width: 191px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   img {
     opacity: 0.2
   }
 }
 
+.smallerTitle {
+  font-size: 10px !important;
+}
+
 .deals-header {
   border-bottom: 1px solid #868484;
   padding-top: 10px;
+  margin: 0 0 4.5px !important;
 }
 
 
