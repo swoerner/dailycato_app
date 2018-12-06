@@ -8,8 +8,17 @@
       </div>
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
+      <% if params[:location] %>
         <% if @restaurant.distance_to(params[:location],:km) %>
-      <p><%= @restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+        <p><%= @restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+        <% end %>
+      <% end %>
+
+
+      <% if params[:location_form] %>
+        <% if @restaurant.distance_to(params[:location_form],:km) %>
+        <p><%= @restaurant.distance_to(params[:location_form],:km).round(2) %> km</p>
+        <% end %>
       <% end %>
         <p><%= @restaurant.location %></p>
 

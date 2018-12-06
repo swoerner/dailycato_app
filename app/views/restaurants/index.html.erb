@@ -22,7 +22,7 @@
     <h1>We have found <%= pluralize(@restaurant.count, 'deal', 'deals') %> around, for <span id="date"></span>:</h1>
   </div>
   <% @restaurant.each do |restaurant| %>
-  <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant, location: params[:location]) %>';">
+  <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant, location: params[:location], location_form: params[:location_form])%>';">
 
    <div class="left-box" style="background-image: linear-gradient(355deg, rgba(140,140,140,0.4) 40%, rgba(240,240,240,0.1) 60%), url(<%= image_path(restaurant.photos.first) %>);">
 
@@ -32,8 +32,17 @@
     <div class="restaurant-details">
 
       <h3><%= restaurant.name %></h3>
-      <% if restaurant.distance_to(params[:location],:km) %>
-      <p><%= restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+      <% if params[:location] %>
+        <% if restaurant.distance_to(params[:location],:km) %>
+        <p><%= restaurant.distance_to(params[:location],:km).round(2) %> km</p>
+        <% end %>
+      <% end %>
+
+
+      <% if params[:location_form] %>
+        <% if restaurant.distance_to(params[:location_form],:km) %>
+        <p><%= restaurant.distance_to(params[:location_form],:km).round(2) %> km</p>
+        <% end %>
       <% end %>
 
       <% if restaurant.rating %>
