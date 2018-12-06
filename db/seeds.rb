@@ -155,7 +155,7 @@ Deal.create!(name: "Rührei-Frühstück", description: "mit knusprigem Ofenfrisc
 
 Deal.create!(name: "Gazpacho", description: "Spanische kalte Gemüsesuppe, dazu Picos oder Brot", food_type: "spanish", price: 3.90, restaurant: r3)
 Deal.create!(name: "Boquerones en Aceite", description: "Sardellen in Oliven-Öl dazu Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
-Deal.create!(name: "Tapas-Teller", description: "Gemischter spanischer Tapas-Teller mit Serrano, Paprikawurst, Salami dazu Oliven, Picos oder Brot", food_type: "spanish", price: 5.50, restaurant: r3)
+Deal.create!(name: "Tapas-Teller", description: "Gemischter Tapas-Teller mit Serrano, Salami dazu Oliven und Picos", food_type: "spanish", price: 5.50, restaurant: r3)
 Deal.create!(name: "Iberischer Tapas-Teller", description: "mit diversen Käse-Sorten, Marmelade, Obst, Picos oder Brot", food_type: "spanish", price: 8.50, restaurant: r3)
 Deal.create!(name: "Bolo de Arroz", description: "Reis-Muffin, zahl 2 und nimm 3", food_type: "spanish", price: 2.60, restaurant: r3)
 Deal.create!(name: "Kaffeezeit", description: "Cappucino und ein Stück Torte", food_type: "spanish", price: 3.00, restaurant:r3)
@@ -315,6 +315,7 @@ Deal.create!(name: "Chiligarnelen", description: "mit Strauchtomaten und Grapefr
 Deal.create!(name: "Suppe des Tages", description: "wechselndes Angebot", food_type: "barbeque", price: 8.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
 Deal.create!(name: "Spare Ribs", description: "vom Havelländer Apfelschwein mit Barbecuesauce", food_type: "barbeque", price: 16.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
 Deal.create!(name: "Krosser Bauch", description: "vom Thüringer Duroc Schwein (24 Std. gegart) mit Hopfen-Malz-Sauce", food_type: "barbeque", price: 16.00, restaurant: Restaurant.where(cuisine: "Barbeque").sample)
+
 
 Deal.create!(name: "Drehspieß Kebap", description: "im Fladenbrot mit grünem Salat, Rotkraut, Weißkraut, Zwiebeln, Tomaten und Sauce nach Wahl", food_type: "food stands", price: 5.00, restaurant: Restaurant.where(cuisine: "Food Stands").sample)
 Deal.create!(name: "Drehspieß Dürüm", description: "mit grünem Salat, Rotkraut, Weißkraut, Zwiebeln, Tomaten und Sauce nach Wahl", food_type: "food stands", price: 6.00, restaurant: Restaurant.where(cuisine: "Food Stands").sample)

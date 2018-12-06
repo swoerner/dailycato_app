@@ -5,39 +5,35 @@
    <%= simple_form_for [@restaurant, @deals, @booking] do |b| %>
 
    <div class="flex-container-booking-all">
+    <div class="flex-container-booking">
 
     <div class="booking-time">
       <%= b.input :booking_time, as: :string, required: false, input_html: {class: "datepicker form-inline"} %>
     </div>
-    <div class="flex-container-booking">
       <div>
         <%= b.association :deal, collection: @restaurant.deals, value: "1" %>
       </div>
       <div>
         <%= b.input :amount, collection: 1..5, input_html: {class: "amount-of-deals", id: "amount"} %>
-      </div>
+      </div style="width: 21.5vw; margin: 0 auto;">
       <div class="price-of-deal">
         <p> Price </p>
         <!-- <div class="display-price"> -->
           <select class="display-price" id="priceselect" style="pointer-events: none;">
-            <option value="">select a deal please</option>
+            <option value="" style="color: lightgrey !important">select a deal please</option>
             <%= @restaurant.deals.each do |deal|  %>
             <option value="<%= deal.name %>"><%= deal.price %>€</option>
             <% end %>
           </select>
           <!--    </div> -->
         </div>
-      </div>
-
-      <div class="total-price-box">
         <div class="total-sum">
           <p> Total: </p>
           <p id="total-price"> € </p>
         </div>
       </div>
-      <div class="checkout-box">
-        <%= b.submit "Confirm Booking" , class: "booking-button-orange" %>
-      </div>
+        <%= b.submit "Confirm Booking" , class: "booking-button booking-button-margin" %>
+
     </div>
   </div>
 

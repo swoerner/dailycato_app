@@ -68,7 +68,7 @@
         <p><%= d.description %></p>
       </div>
       <div class="offer-price">
-        <p><%= d.price.to_i %>€</p>
+        <p><%= humanized_money_with_symbol(d.price) %></p>
       </div>
     </div>
     <% end %>
@@ -98,5 +98,17 @@ data-mapbox-api-key="<%= ENV['MAP_API'] %>"
   b = document.querySelector('.filtercontainer')
   a.addEventListener('click', function(){
     b.classList.toggle('filterisopen')
+    document.querySelector(".cuisine-selection").classList.toggle("filter_open")
   })
+
+
+  document.querySelectorAll("form")[1].addEventListener("submit" , function(){
+    event.preventDefault();
+    locatio = document.querySelector("#restaurant_location").value
+    document.querySelector(".hidden-location-input").setAttribute("value", locatio)
+    document.querySelectorAll("form")[1].submit()
+  })
+
 </script>
+
+<%= javascript_pack_tag 'textShorten' %>
