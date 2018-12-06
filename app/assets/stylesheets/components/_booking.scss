@@ -3,7 +3,7 @@
 }
 
 .booking-page h1 {
-  margin: 24px;
+  // margin: 24px;
   color: white;
   font-size: 25px;
 }
@@ -12,7 +12,8 @@
   // display: flex;
   flex-direction: column;
   // justify-content: space-around !important;
-  width: 25vw;
+  width: 21.5vw;
+  margin: 0 auto;
 
 
   p {
@@ -27,7 +28,7 @@
 }
 
 .amount-of-deals {
-  width: 25vw;
+  width: 21.5vw;
   height: 39px;
   padding: 6px 12px;
   font-size: 18px;
@@ -39,6 +40,17 @@
   border-radius: 2px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+
+#display-price {
+  width: 21.5vw;
+
+}
+
+#priceselect {
+  width: 21.5vw;
+
 }
 
 .flex-container-booking-all {
@@ -94,11 +106,19 @@ hr {
   width: 309px;
 }
 
+.booking-button-margin {
+  margin-top: 30px;
+}
+
+.booking-button-margin:hover {
+font-weight: 400;
+}
+
 .total-sum {
   font-weight: 450;
   font-size: 20px !important;
   text-align: center;
-  width: 25vw;
+  width: 21.5vw;
   height: 40px;
   padding: 6px 12px;
   background-color: white;
