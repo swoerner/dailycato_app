@@ -99,19 +99,27 @@
    font-size: 33px;
    color: gray;
    pointer-events: none;
-    margin-bottom: 12px;
+   margin-bottom: 12px;
  }
  p{
   margin-bottom: 5px!important;
- }
+}
 
- .star-btn {
+.star-btn {
   input {
     display: none;
   }
   &.active {
    color: #ff7233;
  }
+}
+
+.filter_open_cuisine {
+  pointer-events: auto !important;
+}
+
+.filter_open_cuisine :hover{
+  span { cursor: pointer;}
 }
 
 .filter_open {
@@ -129,8 +137,8 @@
   label {
     font-weight: lighter;
 
-  text-transform: capitalize;
-  font-size: 15px;
+    text-transform: capitalize;
+    font-size: 15px;
 
     margin-left: 15px;
 
@@ -139,7 +147,7 @@
     display: flex;
     flex-wrap: wrap;
   }
-      margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .star_input {
@@ -208,9 +216,9 @@
 .checkcontainer{
  height: 25px;
 
-    width: 25px;
-    position:relative;
-    margin-bottom: -5px;
+ width: 25px;
+ position:relative;
+ margin-bottom: -5px;
 
 }
 .checkcontainer input {
@@ -224,7 +232,7 @@
   display:flex;
   width:40%;
 
-margin-right: 15px;
+  margin-right: 15px;
 
   text-align: left;
   align-items: center;
@@ -233,11 +241,11 @@ margin-right: 15px;
 /* Create a custom checkbox */
 .checkmark {
 
-        position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
 
     // background-color:#ff7233;
     border: #ff7233 solid 1px;
