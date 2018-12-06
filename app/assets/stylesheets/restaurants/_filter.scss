@@ -116,6 +116,10 @@
 
 .filter_open {
   pointer-events: auto !important;
+
+  :hover {
+    pointer-events: auto;
+  }
 }
 
 .cuisine-selection {
