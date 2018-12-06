@@ -24,7 +24,7 @@
   <% @restaurant.each do |restaurant| %>
   <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
 
-   <div class="left-box" style="background-image: url(<%= image_path(restaurant.photos.first) %>);">
+   <div class="left-box" style="background-image: linear-gradient(355deg, rgba(140,140,140,0.4) 40%, rgba(240,240,240,0.1) 60%), url(<%= image_path(restaurant.photos.first) %>);">
 
     <div class="offer-count marker-pin">
       <p><%= restaurant.id %></p>
@@ -99,6 +99,8 @@ data-mapbox-api-key="<%= ENV['MAP_API'] %>"
   a.addEventListener('click', function(){
     b.classList.toggle('filterisopen')
     document.querySelector(".cuisine-selection").classList.toggle("filter_open")
+    document.querySelector(".cost-ratings").classList.toggle("filter_open")
+    document.querySelector(".star_ratings").classList.toggle("filter_open")
   })
 
 

@@ -4,7 +4,7 @@
   justify-content: space-around;
   padding-top: 70px;
   padding-bottom: 80px;
-  background-color: #EAE9E9;
+  background-color: #F7F7F8;
   // align-items: center;
 }
 
@@ -12,8 +12,21 @@
   text-align: left !important;
 }
 
+.starting-soon {
+  width: 100%;
+  background-color: #ED6F33;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  h1{
+    font-size: 35px;
+    font-weight: 250;
+  }
+}
+
 .ap-name {
-  display: none !important;
+  color: #aaaaaa;
 }
 
 .ap-suggestion{
@@ -21,7 +34,7 @@
 }
 
 .advantages-section {
-  background-color: #EAE9E9;
+  background-color: #F7F7F8;
   margin-bottom: -20px;
   padding-top: 35px;
 }

@@ -96,9 +96,10 @@
 
   .star-ratings {
    display: flex;
-   font-size: 20px;
-   color: lightgrey;
-margin-bottom: 12px;
+   font-size: 33px;
+   color: gray;
+   pointer-events: none;
+    margin-bottom: 12px;
  }
  p{
   margin-bottom: 5px!important;
@@ -144,8 +145,9 @@ margin-bottom: 12px;
   }
 }
 
-.cost-ratigs {
+.cost-ratings {
   display: flex;
+  pointer-events: none;
   input {
     display: none;
   }
