@@ -1,5 +1,5 @@
 meta_product_name: "Dailycato"
 meta_title: "Dailycato - Find the best lunch deals nearby"
 meta_description: "Hungry? Whether you've got visitors in town, are enjoying a day off, or just want to treat yourself, here at Dailycato you can find some of the best lunch deals nearby"
-meta_image: "cover.jpg"                       # should exist in `app/assets/images/`
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
