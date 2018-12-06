@@ -1,5 +1,5 @@
 .split {
-  height: 300px;
+  height: 400px;
   // width: 50%;
   // display: flex;
   // justify-content: space-between;
@@ -8,8 +8,6 @@
   // // z-index: 1;
   // // top: 0;
   // overflow-x: hidden;
-
-  margin-top: 50px;
 
 }
 
@@ -40,7 +38,10 @@
 
 #first-picture {
   background-size: cover !important;
+  border: 30px solid #FF6300;
 }
+
+
 
 
 @media (min-width: 481px) and (max-width: 767px) {

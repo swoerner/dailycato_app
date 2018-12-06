@@ -23,21 +23,13 @@
   </div>
   <% @restaurant.each do |restaurant| %>
   <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant) %>';">
+
+   <div class="left-box" style="background-image: url(<%= image_path(restaurant.photos.first) %>);">
+
     <div class="offer-count marker-pin">
       <p><%= restaurant.id %></p>
     </div>
     <div class="restaurant-details">
-
-      <div class="restaurant-logo">
-        <% if restaurant.photos %>
-        <img src="<%= restaurant.photos.first %>" alt="">
-        <% else  %>
-        <!-- # Default Bild einfuegen -->
-        <img src="" alt="">
-
-        <% end %>
-
-      </div>
 
       <h3><%= restaurant.name %></h3>
       <% if restaurant.distance_to(params[:location],:km) %>
@@ -55,30 +47,34 @@
         <span class="fa fa-star"></span>
         <% end %>
         <% end %>
-
       </p>
 
       <p><%= restaurant.location %></p>
-      <p><%= restaurant.rating %></p>
-
-      <!-- Der Anfangsbuchstabe jedes Wortes wird groß geschrieben -->
+      <!--  <p><%= restaurant.rating %></p> -->
       <p><%= restaurant.cuisine.titleize %></p>
     </div>
-    <div class="restaurant-offer">
-      <p><% restaurant.deals[0..2].each do |d|  %></p>
-      <div class="offer-name">
-        <div class="flex-text">
-          <p><strong><%= d.name %></strong></p>
-          <p><%= d.description %></p>
-        </div>
-        <div class="offer-price">
-          <p><%= d.price.to_i %>€</p>
-        </div>
-      </div>
-      <% end %>
-    </div>
   </div>
-  <% end %>
+
+
+
+  <div class="restaurant-offer">
+    <div class="deals-header">
+      <p> Available Deals </p>
+    </div>
+    <p><% restaurant.deals[0..2].each do |d|  %></p>
+    <div class="offer-name">
+      <div class="flex-text">
+        <p><strong><%= d.name %></strong></p>
+        <p><%= d.description %></p>
+      </div>
+      <div class="offer-price">
+        <p><%= d.price.to_i %>€</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
 </div>
 <div
 

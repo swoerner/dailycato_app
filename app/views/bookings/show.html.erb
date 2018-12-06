@@ -1,12 +1,23 @@
-<div class="wrapper">
-  <div class="container">
+<div class="container form-wrapper">
+  <div class="booking-page">
+    <center> <h1>Please check your booking </h1> </center>
 
+  <div class="flex-container-booking-all">
+    <h2><strong>Your selected Restaurant:</strong></h2>
+    <% if @booking.payment_state == 'pending' %>
+    <p><%= @restaurant.name %></p>
+   <div class="restaurant-picture">
+        <% if @restaurant.photos %>
+        <img class= "picture-restaurant" src="<%= @restaurant.photos.first %>">
+        <% end %>
+      </div>
+    <h2><strong>Your Order:</strong></h2>
+    <p><%= @booking.amount %> x <%= @booking.deal.name %></p>
+    <h2><strong>Date:</strong></h2>
+    <p><%= @booking.booking_time.strftime('%e. %B %Y %m:%M') %></p>
+    <hr/>
 
-<% if @booking.payment_state == 'pending' %>
-<h1>Your Booking for <%= @restaurant.name %></h1>
-<p>TEST</p>
-<h2> <%= @booking.amount %>x<%= @booking.deal_id %></h2>
-  <%= form_tag restaurant_booking_payments_path(@restaurant, @booking) do %>
+    <%= form_tag restaurant_booking_payments_path(@restaurant, @booking) do %>
     <article>
       <label class="amount">
         <span>Amount: <%= humanized_money_with_symbol(@booking.price) %></span>
@@ -14,18 +25,19 @@
     </article>
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-name="My Booking"
-      data-email="<%= current_user.email %>"
-      data-amount="<%= @booking.price_cents %>"
-      data-currency="<%= @booking.price.currency %>"></script>
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="My Booking"
+    data-email="<%= current_user.email %>"
+    data-amount="<%= @booking.price_cents %>"
+    data-currency="<%= @booking.price.currency %>"></script>
 
-  <% end %>
+    <% end %>
 
+    <% else %>
+
+    <h1>Thanks, see you <%= @booking.booking_time.strftime('%e. %B %Y %m:%M') %>!</h1>
+
+    <% end %>
 </div>
+  </div>
 </div>
-<% else %>
-
-<h1>Thanks, see you <%= @booking.booking_time.strftime('%e. %B %Y %m:%M') %>!</h1>
-
-<% end %>
