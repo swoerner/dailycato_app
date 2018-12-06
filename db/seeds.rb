@@ -3,7 +3,7 @@ BusinessHour.destroy_all
 Deal.destroy_all
 Restaurant.destroy_all
 User.destroy_all
-USER = User.create!(email: "tim.raue@web.de", password: "123123", first_name: "Tim", last_name: "Raue")
+USER = User.create!(email: "stefan.wörner@web.de", password: "123123", first_name: "Stefan", last_name: "Wörner")
 
 r1 = Restaurant.create!(rating: 4, name: "Russtrôt Café-Bistro", location: "Zimmerstraße 56", cuisine: "russisch", user: USER, photos: ["https://s3-media1.fl.yelpcdn.com/bphoto/DzHBR_A60NkuLzI0R6cYew/o.jpg", "https://s3-media3.fl.yelpcdn.com/bphoto/Sq9aILOTNHFL3mNsdV-gkg/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/iAbhtIbeEoFFN19rr8Zbiw/o.jpg"])
 sleep(2)
@@ -144,7 +144,7 @@ REVIEWS = "/reviews"
 DEFAULT_BUSINESS_ID = "yelp-san-francisco"
 DEFAULT_TERM = "dinner"
 DEFAULT_LOCATION = "San Francisco, CA"
-SEARCH_LIMIT = 5
+SEARCH_LIMIT = 10
 
 
 def search(term, location) # for ids
