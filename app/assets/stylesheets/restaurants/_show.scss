@@ -18,11 +18,18 @@ table {
   font-size: 10px !important;
 }
 
+.new-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .deals-header {
   border-bottom: 1px solid #ED6F33;;
   padding-top: 10px;
   margin: 0 0 4.5px !important;
-  color: #ED6F33;;
+  color: #ED6F33;
+  padding-bottom: 5px;
 
   p {
     margin: 0 0 7px !important;
