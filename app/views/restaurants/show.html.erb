@@ -105,7 +105,7 @@
         <% counter =  1 %>
         <% @restaurant_opening_hours.each do |daily|%>
 
-        <tr class="<%= 'today' if Date.today.wday == counter %>"><th><%= daily.day.capitalize! %></th><td><%= daily.open_time %> - <%= daily.closed_time %></td></tr>
+        <tr class="<%= 'today' if Date.today.wday == counter %>"><th><%= daily.day.capitalize! %></th><td><%= daily.closed_time %> - <%= daily.open_time %></td></tr>
         <% counter += 1 %>
         <% end %>
       </table>
