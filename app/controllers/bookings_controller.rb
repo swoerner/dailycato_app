@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     @booking.payment_state = 'pending'
     @booking.price_cents = (@deal.price_cents * booking_params[:amount].to_i)
     if @booking.save
-      flash[:notice] = "Booking was successful!"
       redirect_to restaurant_booking_path(@restaurant, @booking)
     else
       render 'new'

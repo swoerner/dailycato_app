@@ -24,7 +24,7 @@
   <% @restaurant.each do |restaurant| %>
   <div class="offer-detail" onclick="location.href='<%= restaurant_path(restaurant, location: params[:location], location_form: params[:location_form])%>';">
 
-   <div class="left-box" style="background-image: linear-gradient(355deg, rgba(140,140,140,0.4) 40%, rgba(240,240,240,0.1) 60%), url(<%= image_path(restaurant.photos.first) %>);">
+   <div class="left-box" style="background-image: linear-gradient(385deg, rgba(14, 14, 14, 0.39) 35%, rgba(240, 240, 240, 0) 104%), url(<%= image_path(restaurant.photos.first) %>);">
 
     <div class="offer-count marker-pin">
       <p><%= restaurant.id %></p>
@@ -78,7 +78,7 @@
     <div class="offer-name">
       <div class="flex-text">
         <p><strong><%= d.name %></strong></p>
-        <p><%= d.description %></p>
+        <p><%= truncate(d.description, length: 45) %></p>
       </div>
       <div class="offer-price">
         <p><%= humanized_money_with_symbol(d.price) %></p>
